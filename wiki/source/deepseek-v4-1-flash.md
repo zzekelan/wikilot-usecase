@@ -5,7 +5,7 @@
 - 标题：DeepSeek-V4.1-Flash: Pushing the Limits of KV Cache Compression
 - 作者：DeepSeek-AI
 - 年份：2026；具体发布日期待核实。PDF 元数据创建日期为 2026-09-10，不据此认定发布日期。
-- 原文：[[raw/DeepSeek_V41_Tech_Report.pdf|技术报告全文]]，共 51 页。
+- 原文：[[raw/大模型技术报告/DeepSeek-V4.1-Flash/DeepSeek_V41_Tech_Report.pdf|技术报告全文]]，共 51 页。
 - 官方页面：[Hugging Face](https://huggingface.co/deepseek-ai/DeepSeek-V4.1-Flash)
 - 官方全文：[PDF](https://huggingface.co/deepseek-ai/DeepSeek-V4.1-Flash/blob/main/DeepSeek_V41_Tech_Report.pdf)
 - 阅读状态：已查看摘要、部分引言和第 24 页；本页先记录局部精读问答，不代表完整报告总结。下文页码均为 PDF 页码。
@@ -18,7 +18,7 @@
 
 > To further assess the model’s capabilities in real-world R&D scenarios, we additionally perform perplexity tests on dedicated internal corpora.
 
-译文：为了进一步评估模型在实际研发场景中的能力，我们还在专门的内部语料上进行了困惑度测试。出处：[[raw/DeepSeek_V41_Tech_Report.pdf|报告]]第 24 页末段，§4.3.2 的评估结果讨论。
+译文：为了进一步评估模型在实际研发场景中的能力，我们还在专门的内部语料上进行了困惑度测试。出处：[[raw/大模型技术报告/DeepSeek-V4.1-Flash/DeepSeek_V41_Tech_Report.pdf|报告]]第 24 页末段，§4.3.2 的评估结果讨论。
 
 ### 这里的研发场景指什么？
 
@@ -31,6 +31,11 @@
 ### 如何理解这项证据？
 
 **阅读解读：** 困惑度与 BPB 衡量模型对语料的概率预测表现。较低的 BPB 意味着模型对这些资料的预测更准确，可以作为其对研发内容建模能力的间接证据，但不能直接等同于“模型能独立完成研发任务”。验证实际任务能力还需查看任务执行、工具使用和结果正确性等评估。本段也不能单独证明模型见过或记住了这些评估资料。
+
+## 相关资料
+
+- [[raw/大模型技术报告/DeepSeek-V4.1-Flash/img_v3_0215e_1d574a93-1181-47ad-af6e-e46320b7f04g.png|后训练段落截图]]：文字涉及 SFT、RL、OPD 和数据管线；按截图中的模型名归入本报告目录，具体截图页码尚未核对。
+- [[wiki/source/深度学习基础-2026暑期学校|深度学习基础课件]]：其最大似然、交叉熵与泛化模块可作为理解概率预测评估的基础阅读。
 
 ## 待继续阅读
 
