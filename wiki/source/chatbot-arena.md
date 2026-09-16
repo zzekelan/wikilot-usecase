@@ -147,3 +147,5 @@ BERTopic 管线：text-embedding-3-small 得 1536 维→UMAP 到 5 维→HDBSCAN
 - [[wiki/concept/主动采样与逆概率加权|主动采样与逆概率加权]]：连接主动分配评审预算与抽样校正。
 
 - [[wiki/concept/异常投票检测|异常投票检测]]：展开秩检验、依赖问题和表 5 的正确读法。
+
+- [[wiki/concept/主题建模与LLM评审|主题建模与 LLM 评审]]：解释主题覆盖分析与自动裁判协议。
