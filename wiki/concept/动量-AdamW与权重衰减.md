@@ -25,3 +25,7 @@
 报告对 Muon 使用 Nesterov 动量和解耦权重衰减；Sinkhorn 更新也使用 Nesterov 动量，但不施加权重衰减。因此不能把报告概括为“整个模型都使用 AdamW”。
 
 Muon 和 Sinkhorn 的具体矩阵更新算法超出课件内容，本页仅记录它们与基础优化概念的关系。实际更新幅度还受[[wiki/concept/学习率与批量调度|学习率调度]]影响。跨来源解释见[[wiki/synthesis/深度学习基础与DeepSeek报告的共同概念|共同概念对照]]。
+
+## 关联条目（持续维护）
+
+- [[wiki/concept/Muon与Sinkhorn矩阵优化|Muon 与 Sinkhorn 矩阵优化]]：补充报告中矩阵参数的两类优化方法。
