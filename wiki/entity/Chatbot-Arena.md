@@ -23,3 +23,7 @@ LMSYS-Chat-1M 是更早的对话数据集，缺少直接用于排名的偏好标
 ## 项目沿革
 
 2024-09-20 的 LMSYS 公告宣布独立站 lmarena.ai；后续项目改名 Arena、使用 arena.ai。官方介绍记载 2025 年成立 Arena Intelligence Inc.，平台具有伯克利研究起源与后续公司化发展两层身份。链接：[独立站公告](https://www.lmsys.org/blog/2024-09-20-arena-new-site/)、[更名公告](https://arena.ai/blog/lmarena-is-now-arena)、[官方介绍](https://arena.ai/company/about)。来源页保留 2026-09-16 的核查记录。
+
+## 关联条目（持续维护）
+
+- [[wiki/entity/Arena-Bench|Arena Bench]]：Arena Bench 从平台提示中筛选构建。

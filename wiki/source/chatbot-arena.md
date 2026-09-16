@@ -151,3 +151,5 @@ BERTopic 管线：text-embedding-3-small 得 1536 维→UMAP 到 5 维→HDBSCAN
 - [[wiki/concept/主题建模与LLM评审|主题建模与 LLM 评审]]：解释主题覆盖分析与自动裁判协议。
 
 - [[wiki/entity/Chatbot-Arena|Chatbot Arena]]：建立平台实体，连接采集、排名与沿革。
+
+- [[wiki/entity/Arena-Bench|Arena Bench]]：区分实时平台与固定自动评测集。

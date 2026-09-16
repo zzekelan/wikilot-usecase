@@ -262,3 +262,8 @@
 
 - 完成[[wiki/entity/Chatbot-Arena|Chatbot Arena]]：众包匿名成对评测平台：数据、统计排名和后续项目沿革。
 - 同步[[wiki/INDEX|索引]]及相关来源/概念回链；本条目独立提交。
+
+## [2026-09-16] 条目整理 | Arena Bench
+
+- 完成[[wiki/entity/Arena-Bench|Arena Bench]]：从 Arena 提示筛出的 350 题自动评测集，采用交换位置的加权成对评分。
+- 同步[[wiki/INDEX|索引]]及相关来源/概念回链；本条目独立提交。

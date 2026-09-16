@@ -76,3 +76,4 @@
 - [[wiki/entity/DSec|DSec]] — DeepSeek Elastic Compute：支持大规模智能体训练与评测的沙箱平台。
 - [[wiki/entity/DeepSeek-Harness|DeepSeek Harness]] — DeepSeek 智能体框架的 Minimal、Standard、PTC 与 Agent Team 模式。
 - [[wiki/entity/Chatbot-Arena|Chatbot Arena]] — 众包匿名成对评测平台：数据、统计排名和后续项目沿革。
+- [[wiki/entity/Arena-Bench|Arena Bench]] — 从 Arena 提示筛出的 350 题自动评测集，采用交换位置的加权成对评分。
