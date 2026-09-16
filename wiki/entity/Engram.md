@@ -23,3 +23,7 @@ Engram 是 DeepSeek 的条件记忆模块，以稀疏查表为模型提供记忆
 确定性索引使查表可在进入目标层前启动。部署时可从 host memory 经 RDMA 预取，和前层计算重叠；训练时表按行分片，状态进一步分片，反向梯度先缓冲、后回传，尽量和视觉阶段重叠。RL rollout 将表常驻 GPU，以减轻主机内存碎片压力（第 13、18 页）。
 
 Engram 的参数应与主干分开记账：报告的 552B 主干之外还有 196B Engram。大量查表参数增加容量，但其访问模式与[[wiki/concept/MoE与多模态负载均衡|MoE 专家计算]]不同。
+
+## 关联条目（持续维护）
+
+- [[wiki/entity/DeepSeek-V4.1-Flash|DeepSeek-V4.1-Flash]]：V4.1-Flash 将条件记忆与 MoE 主干结合。

@@ -214,3 +214,5 @@ BPB 与 PPL 同源于负对数概率但归一化不同；例如单 token 概率 
 - [[wiki/concept/推测解码与DSpark|推测解码与 DSpark]]：解释 DSpark 的草拟、验证与训练阶段。
 
 - [[wiki/entity/DeepSeek-ViT|DeepSeek-ViT]]：集中说明视觉编码器及其两阶段训练。
+
+- [[wiki/entity/DeepSeek-V4.1-Flash|DeepSeek-V4.1-Flash]]：作为模型实体总览，连接架构组件与完整结果。

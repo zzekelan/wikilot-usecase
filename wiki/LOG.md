@@ -177,3 +177,8 @@
 
 - 完成[[wiki/entity/DeepSeek-ViT|DeepSeek-ViT]]：视觉编码器的结构、图文对比预训练、自回归微调及语言主干接入。
 - 同步[[wiki/INDEX|索引]]及相关来源/概念回链；本条目独立提交。
+
+## [2026-09-16] 条目整理 | DeepSeek-V4.1-Flash
+
+- 完成[[wiki/entity/DeepSeek-V4.1-Flash|DeepSeek-V4.1-Flash]]：多模态 MoE 模型的身份、核心规格、组件关系和能力轮廓。
+- 同步[[wiki/INDEX|索引]]及相关来源/概念回链；本条目独立提交。
