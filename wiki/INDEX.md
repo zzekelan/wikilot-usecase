@@ -5,7 +5,7 @@
 - [[wiki/source/chatbot-arena|Chatbot Arena 论文]] — ICML 2024 人类偏好评测平台论文；已归档正式版 PDF，附摘要要点，待全文精读。
 
 - [[wiki/source/深度学习基础-2026暑期学校|深度学习基础：2026 暑期学校]] — 96 页课件的五模块导读：泛化、交叉熵、深度网络、优化、正则化；附页码、学习建议和勘误。
-- [[wiki/source/deepseek-v4-1-flash|DeepSeek-V4.1-Flash 技术报告]] — 第 24 页局部精读：实际研发场景（R&D）、内部语料评估，困惑度的直观示例与定义，以及它与 BPB 的区别和证据边界；附后训练截图入口，尚未完成全文总结。
+- [[wiki/source/deepseek-v4-1-flash|DeepSeek-V4.1-Flash 技术报告]] — 51 页全文整理：架构、训练、系统、全部结果表、附录、图 6 数值及证据限制。
 
 ## 概念
 

@@ -48,3 +48,9 @@
 
 - 根据 LMSYS 与 Arena 官方页面，确认 Chatbot Arena → LMArena → Arena 的沿革及 UC Berkeley 研究项目起源，补入[[wiki/source/chatbot-arena|来源笔记]]。
 - 区分伯克利学术起源与现今公司主体；2024 年论文不代表当前平台全部功能。
+
+## [2026-09-16] 条目整理 | DeepSeek-V4.1-Flash 技术报告
+
+- 完成[[wiki/source/deepseek-v4-1-flash|DeepSeek-V4.1-Flash 技术报告]]：51 页全文整理：架构、训练、系统、全部结果表、附录、图 6 数值及证据限制。
+- 同步[[wiki/INDEX|索引]]；本条目独立提交，原始资料未修改。
+- 证据以条目所注页码与版本为准；限制、疑点或未公开信息在正文保留。
