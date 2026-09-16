@@ -237,3 +237,8 @@
 
 - 完成[[wiki/concept/Bradley-Terry模型与Elo|Bradley–Terry 模型与 Elo]]：由成对胜负拟合潜在分数，解释逻辑胜率、平移不识别与 Elo 的关系。
 - 同步[[wiki/INDEX|索引]]及相关来源/概念回链；本条目独立提交。
+
+## [2026-09-16] 条目整理 | 置信区间与近似排名
+
+- 完成[[wiki/concept/置信区间与近似排名|置信区间与近似排名]]：用同时置信集表达排名不确定性，比较 bootstrap 与 sandwich 区间。
+- 同步[[wiki/INDEX|索引]]及相关来源/概念回链；本条目独立提交。
