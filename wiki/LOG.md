@@ -162,3 +162,8 @@
 
 - 完成[[wiki/concept/Single-Pass-mHC|Single-Pass mHC]]：通过错位使用混合系数消除依赖，使多残差流处理可融合为单遍。
 - 同步[[wiki/INDEX|索引]]及相关来源/概念回链；本条目独立提交。
+
+## [2026-09-16] 条目整理 | Engram
+
+- 完成[[wiki/entity/Engram|Engram]]：DeepSeek 的条件记忆模块：ngram 哈希查表、上下文门控与确定性预取。
+- 同步[[wiki/INDEX|索引]]及相关来源/概念回链；本条目独立提交。

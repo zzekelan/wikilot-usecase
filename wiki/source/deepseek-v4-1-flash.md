@@ -208,3 +208,5 @@ BPB 与 PPL 同源于负对数概率但归一化不同；例如单 token 概率 
 - [[wiki/concept/MoE与多模态负载均衡|MoE 与多模态负载均衡]]：展开 DeepSeekMoE 的专家配置与图文分模态路由。
 
 - [[wiki/concept/Single-Pass-mHC|Single-Pass mHC]]：解释 Mega-mHC 内核融合所依赖的结构改变。
+
+- [[wiki/entity/Engram|Engram]]：记录条件记忆模块的配置与训练/部署关系。
