@@ -19,3 +19,7 @@ Standard/PTC 使用 v0.1.1+custom.202609011522。模式改变的是模型与外�
 主 agent 可创建具名、持久 teammate：fresh 不带主线程历史，fork 带已完成轮次的一次性快照。所有 agent 共享仓库 checkout；持久 mailbox 支持消息与唤醒，共享任务板记录所有权、依赖和建议写入范围，并用 revision 检查更新。lead 负责最终检查、测试和回应（第 35–36 页）。
 
 [[wiki/entity/DeepSeek-V4.1-Flash|V4.1-Flash]]在多种 DSH 模式和其他框架中训练、评测，目标是提高跨工具协议的适应性，而非只记住一种工具格式。
+
+## 关联条目（持续维护）
+
+- [[wiki/concept/多智能体协作与关键路径|多智能体协作与关键路径]]：展开 Agent Team 的协调机制与关键路径。

@@ -222,3 +222,8 @@
 
 - 完成[[wiki/entity/DeepSeek-Harness|DeepSeek Harness]]：DeepSeek 智能体框架的 Minimal、Standard、PTC 与 Agent Team 模式。
 - 同步[[wiki/INDEX|索引]]及相关来源/概念回链；本条目独立提交。
+
+## [2026-09-16] 条目整理 | 多智能体协作与关键路径
+
+- 完成[[wiki/concept/多智能体协作与关键路径|多智能体协作与关键路径]]：解释共享任务、消息协调、派生延迟奖励和多智能体计算预算。
+- 同步[[wiki/INDEX|索引]]及相关来源/概念回链；本条目独立提交。

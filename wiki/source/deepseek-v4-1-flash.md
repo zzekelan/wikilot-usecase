@@ -232,3 +232,5 @@ BPB 与 PPL 同源于负对数概率但归一化不同；例如单 token 概率 
 - [[wiki/concept/智能体框架与评测协议|智能体框架与评测协议]]：解释跨框架成绩差异与复现配置。
 
 - [[wiki/entity/DeepSeek-Harness|DeepSeek Harness]]：集中记录框架模式与协作接口。
+
+- [[wiki/concept/多智能体协作与关键路径|多智能体协作与关键路径]]：解释多智能体协作奖励与初步实验。
