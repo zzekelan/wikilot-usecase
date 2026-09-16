@@ -333,3 +333,8 @@
 - 历史日志保留迁移前的 `raw/DeepSeek_V41_Tech_Report.pdf` 链接；现行原文为[[raw/大模型技术报告/DeepSeek-V4.1-Flash/DeepSeek_V41_Tech_Report.pdf|DeepSeek 报告 PDF]]。
 - 工作区新出现的 `.obsidian/` 与 `raw/DeepSeek_V41_Tech_Report.pdf.md` 未修改、未纳入本次提交。
 - 后续研究问题集中在综合页：BPB 与实际任务的对应、等预算框架/力度/协作对比、稀疏缓存的边界测试，以及不同用户分布下的偏好排名。
+
+## [2026-09-16] 补充来源 | InstructGPT：用人类反馈训练指令遵循模型
+
+- 归档作者论文 PDF，专题整理方法与附录训练设置；未阅读全文实验和附录其余部分。
+- 条目：[[wiki/source/instructgpt|InstructGPT：用人类反馈训练指令遵循模型]]。
