@@ -37,3 +37,14 @@
 - 各页记录定义、适用范围、例子、两份来源的对应页码和相关概念；区分原文与补充解释。
 - 更新[[wiki/INDEX|索引]]及[[wiki/synthesis/深度学习基础与DeepSeek报告的共同概念|跨来源对照]]的概念导航，保留已有来源笔记和综合解释。
 - 本次基于已核读资料整理，未新增外部研究或实验；报告图 6 的数值及评估数据隔离细节仍待核查。
+
+## [2026-09-16] 入库与分类 | Chatbot Arena 论文
+
+- 从 PMLR 官方论文页定位并下载 ICML 2024 正式版，归档至 [[raw/大模型评测/Chatbot-Arena/Chatbot_Arena_ICML_2024.pdf|大模型评测 / Chatbot Arena]]，已验证为 PDF 文件。
+- 新增[[wiki/source/chatbot-arena|论文来源笔记]]，记录作者、发表信息、下载来源与摘要要点；更新[[wiki/INDEX|索引]]。
+- 本次完成查找与归档，未全文精读；未修改已有原始资料。
+
+## [2026-09-16] 身份核查 | Chatbot Arena 与 Arena.ai
+
+- 根据 LMSYS 与 Arena 官方页面，确认 Chatbot Arena → LMArena → Arena 的沿革及 UC Berkeley 研究项目起源，补入[[wiki/source/chatbot-arena|来源笔记]]。
+- 区分伯克利学术起源与现今公司主体；2024 年论文不代表当前平台全部功能。
