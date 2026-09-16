@@ -139,3 +139,5 @@ BERTopic 管线：text-embedding-3-small 得 1536 维→UMAP 到 5 维→HDBSCAN
 ## 关联条目（持续维护）
 
 - [[wiki/concept/人类偏好与成对比较|人类偏好与成对比较]]：解释匿名众包选择的目标和反馈含义。
+
+- [[wiki/concept/Bradley-Terry模型与Elo|Bradley–Terry 模型与 Elo]]：展开排名分数的概率模型和估计目标。

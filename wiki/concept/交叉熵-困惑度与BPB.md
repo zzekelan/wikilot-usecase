@@ -27,3 +27,7 @@
 ## 相关概念与限制
 
 [[wiki/concept/Softmax与温度采样|Softmax]]将 logits 转换为概率，是理解分类交叉熵的前置概念。较低 BPB 是概率预测表现的证据；结合[[wiki/concept/泛化与数据质量|泛化与评估]]才能判断证据适用于哪些数据，实际研发任务能力仍需任务评估。跨来源脉络见[[wiki/synthesis/深度学习基础与DeepSeek报告的共同概念|共同概念对照]]。
+
+## 关联条目（持续维护）
+
+- [[wiki/concept/Bradley-Terry模型与Elo|Bradley–Terry 模型与 Elo]]：偏好建模同样使用二元交叉熵。
