@@ -21,6 +21,7 @@
 - [[wiki/concept/正则化方法|正则化方法]] — 按作用位置比较 L1/L2、早停、Dropout 和数据增强。
 - [[wiki/concept/标签平滑与置信度校准|标签平滑与置信度校准]] — 解释软目标、过度自信，以及预测概率与实际正确率的对应关系。
 - [[wiki/concept/Muon与Sinkhorn矩阵优化|Muon 与 Sinkhorn 矩阵优化]] — 解释按矩阵结构预处理更新、按头 Muon 和嵌入表的行列平衡。
+- [[wiki/concept/KV缓存与预填充解码|KV 缓存与预填充、解码]] — 解释 prefill、decode、全局/局部 KV 与持久前缀缓存的成本。
 
 ## 跨来源对照
 

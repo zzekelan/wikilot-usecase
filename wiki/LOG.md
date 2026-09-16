@@ -122,3 +122,8 @@
 
 - 完成[[wiki/concept/Muon与Sinkhorn矩阵优化|Muon 与 Sinkhorn 矩阵优化]]：解释按矩阵结构预处理更新、按头 Muon 和嵌入表的行列平衡。
 - 同步[[wiki/INDEX|索引]]及相关来源/概念回链；本条目独立提交。
+
+## [2026-09-16] 条目整理 | KV 缓存与预填充、解码
+
+- 完成[[wiki/concept/KV缓存与预填充解码|KV 缓存与预填充、解码]]：解释 prefill、decode、全局/局部 KV 与持久前缀缓存的成本。
+- 同步[[wiki/INDEX|索引]]及相关来源/概念回链；本条目独立提交。

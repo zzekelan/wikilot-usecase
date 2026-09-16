@@ -192,3 +192,5 @@ BPB 与 PPL 同源于负对数概率但归一化不同；例如单 token 概率 
 ## 关联条目（持续维护）
 
 - [[wiki/concept/Muon与Sinkhorn矩阵优化|Muon 与 Sinkhorn 矩阵优化]]：展开混合优化器方案及算法 1。
+
+- [[wiki/concept/KV缓存与预填充解码|KV 缓存与预填充、解码]]：解释报告降低部署成本时使用的缓存与推理阶段口径。
