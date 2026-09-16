@@ -1,0 +1,57 @@
+{
+  "_id": "67fa60041ad3aaabb92c6513",
+  "id": "SUSTech/ChineseSafe",
+  "author": "SUSTech",
+  "sha": "cfb44aef82a82556d58ae817b743b51cb1b15ac2",
+  "lastModified": "2025-04-13T03:07:20.000Z",
+  "private": false,
+  "gated": false,
+  "disabled": false,
+  "tags": [
+    "task_categories:text-classification",
+    "language:zh",
+    "license:cc-by-nc-4.0",
+    "size_categories:10K<n<100K",
+    "format:json",
+    "modality:text",
+    "library:datasets",
+    "library:pandas",
+    "library:mlcroissant",
+    "library:polars",
+    "arxiv:2410.18491",
+    "region:us",
+    "legal"
+  ],
+  "description": "\n\t\n\t\t\n\t\n\t\n\t\tChineseSafe\n\t\n\nDataset for ChineseSafe: A Chinese Benchmark for Evaluating Safety in Large Language Models\n\n\t\n\t\t\n\t\n\t\n\t\tUsage\n\t\n\nfrom datasets import load_dataset\ndataset = load_dataset(\"SUSTech/ChineseSafe\", split=\"test\")\n\n\n\t\n\t\t\n\t\n\t\n\t\tCitation\n\t\n\nIf you find our dataset useful, please cite:\n@article{zhang2024chinesesafe,\n  title={ChineseSafe: A Chinese Benchmark for Evaluating Safety in Large Language Models},\n  author={Zhang, Hengxiang and Gao, Hongfu and Hu, Qiang and Chen… See the full description on the dataset page: https://huggingface.co/datasets/SUSTech/ChineseSafe.",
+  "downloads": 837,
+  "likes": 28,
+  "cardData": {
+    "license": "cc-by-nc-4.0",
+    "task_categories": [
+      "text-classification"
+    ],
+    "language": [
+      "zh"
+    ],
+    "tags": [
+      "legal"
+    ],
+    "pretty_name": "ChineseSafe",
+    "size_categories": [
+      "10K<n<100K"
+    ]
+  },
+  "siblings": [
+    {
+      "rfilename": ".gitattributes"
+    },
+    {
+      "rfilename": "README.md"
+    },
+    {
+      "rfilename": "test.jsonl"
+    }
+  ],
+  "createdAt": "2025-04-12T12:43:48.000Z",
+  "usedStorage": 3494666
+}

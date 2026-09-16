@@ -1,0 +1,96 @@
+{
+  "_id": "669d17bbe99ea743cfde99b3",
+  "id": "SUSTech/ChineseSafe-Benchmark",
+  "sdk": "gradio",
+  "likes": 21,
+  "tags": [
+    "gradio",
+    "region:us"
+  ],
+  "private": false,
+  "author": "SUSTech",
+  "sha": "b93bb99bad5a9c37143b2698e85420b9308e2a6b",
+  "lastModified": "2025-07-29T01:45:10.000Z",
+  "cardData": {
+    "title": "ChineseSafe",
+    "emoji": "🌍",
+    "colorFrom": "purple",
+    "colorTo": "purple",
+    "sdk": "gradio",
+    "sdk_version": "4.38.1",
+    "app_file": "app.py",
+    "pinned": false
+  },
+  "subdomain": "sustech-chinesesafe-benchmark",
+  "gated": false,
+  "disabled": false,
+  "host": "https://sustech-chinesesafe-benchmark.hf.space",
+  "datasets": [
+    "SUSTech/ChineseSafe"
+  ],
+  "region": "us",
+  "siblings": [
+    {
+      "rfilename": ".gitattributes"
+    },
+    {
+      "rfilename": ".idea/workspace.xml"
+    },
+    {
+      "rfilename": "README.md"
+    },
+    {
+      "rfilename": "app.py"
+    },
+    {
+      "rfilename": "assets/logo.png"
+    },
+    {
+      "rfilename": "assets/text.py"
+    },
+    {
+      "rfilename": "changelog.md"
+    },
+    {
+      "rfilename": "data/ChineseGuardBench.csv"
+    },
+    {
+      "rfilename": "data/chinese_benchmark_gen.csv"
+    },
+    {
+      "rfilename": "data/chinese_benchmark_per.csv"
+    },
+    {
+      "rfilename": "data/subclass_gen.csv"
+    },
+    {
+      "rfilename": "data/subclass_per.csv"
+    },
+    {
+      "rfilename": "requirements.txt"
+    }
+  ],
+  "createdAt": "2024-07-21T14:14:19.000Z",
+  "usedStorage": 0,
+  "runtime": {
+    "stage": "RUNNING",
+    "hardware": {
+      "current": "cpu-basic",
+      "requested": "cpu-basic"
+    },
+    "gcTimeout": 172800,
+    "replicas": {
+      "current": 1,
+      "requested": 1
+    },
+    "devMode": false,
+    "domains": [
+      {
+        "domain": "sustech-chinesesafe-benchmark.hf.space",
+        "stage": "READY"
+      }
+    ],
+    "sha": "b93bb99bad5a9c37143b2698e85420b9308e2a6b",
+    "pySpacesVersion": "0.48.1"
+  }
+}
