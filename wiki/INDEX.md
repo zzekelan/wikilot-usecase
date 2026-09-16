@@ -2,7 +2,7 @@
 
 ## 来源笔记
 
-- [[wiki/source/chatbot-arena|Chatbot Arena：基于人类偏好的大模型评测平台]] — 30 页全文：数据、BT 排名、主动采样、专家复标、全部附录及统计/公式疑点。
+- [[wiki/source/chatbot-arena|Chatbot Arena：基于人类偏好的大模型评测平台]] — 数据采集、BT 排名、主动采样、专家复标、异常检测与附录公式。
 
 - [[wiki/source/深度学习基础-2026暑期学校|深度学习基础：2026 暑期学校]] — 五模块的概念、公式、例子、工程细节、教材章节与勘误。
 - [[wiki/source/deepseek-v4-1-flash|DeepSeek-V4.1-Flash 技术报告]] — 架构、预训练、后训练、服务系统、完整结果表和附录推导。

@@ -82,3 +82,8 @@
 
 - 完成[[wiki/source/deepseek-v4-1-flash|DeepSeek-V4.1-Flash 技术报告]]：架构、预训练、后训练、服务系统、完整结果表和附录推导。
 - 同步[[wiki/INDEX|索引]]；本条目独立提交。
+
+## [2026-09-16] 条目整理 | Chatbot Arena：基于人类偏好的大模型评测平台
+
+- 完成[[wiki/source/chatbot-arena|Chatbot Arena：基于人类偏好的大模型评测平台]]：数据采集、BT 排名、主动采样、专家复标、异常检测与附录公式。
+- 同步[[wiki/INDEX|索引]]；本条目独立提交。

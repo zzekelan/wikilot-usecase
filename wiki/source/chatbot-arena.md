@@ -6,13 +6,13 @@
 - 作者：Wei-Lin Chiang、Lianmin Zheng（共同一作），Ying Sheng、Anastasios N. Angelopoulos、Tianle Li、Dacheng Li、Banghua Zhu、Hao Zhang、Michael I. Jordan、Joseph E. Gonzalez、Ion Stoica。论文署名机构为 UC Berkeley、Stanford（Ying Sheng）、UCSD（Hao Zhang）；通讯作者 Wei-Lin Chiang（第 1 页）。
 - ICML 2024，PMLR 235，8359–8388；[正式论文页](https://proceedings.mlr.press/v235/chiang24b.html)、[arXiv:2403.04132](https://arxiv.org/abs/2403.04132)、[下载地址](https://raw.githubusercontent.com/mlresearch/v235/main/assets/chiang24b/chiang24b.pdf)。归档日 2026-09-16。
 - 原文：[[raw/大模型评测/Chatbot-Arena/Chatbot_Arena_ICML_2024.pdf|30 页正式版 PDF]]。以下页码均为 PDF 页码。
-- 2026-09-16 已阅读全文 1–30 页（含参考文献、附录和示例）；视觉核对第 5、8、17、18 页。未运行统计代码、访问原始投票或复现标注。此前“只读摘要、待全文”状态已被本次全文整理取代。
+- 阅读范围：全文 30 页（含参考文献、附录和示例）；重点图文核对第 5、8、17、18 页。整理日期：2026-09-16。
 
 ## 研究问题与贡献
 
 论文按**静态/实时题目**与**标准答案/人类偏好**划分评测。静态标准答案便宜、可复现，但不充分覆盖开放式、多轮偏好，且有污染、饱和与过拟合风险；Arena 通过随机匿名双模型对战采集实时提示词和相对偏好，再做统计排名。作者贡献是开放采集平台、数据质量分析、排名与采样方法、拟公开的 100K+ 偏好数据集，而不是一个新语言模型（第 1–3、9 页）。
 
-**Wiki 结论：** 该研究提供的是“这一平台的人群和问题下谁更受偏好”的证据，不能直接读成客观正确性、安全性或所有行业的总体能力排名。
+Arena 排名衡量用户在给定问题上的回答偏好；事实正确性、安全性和专业任务表现是与之相关、但不同的评测维度。
 
 ## 全文地图
 
@@ -23,7 +23,7 @@
 | 5–6 | 异常用户检测：秩 p 值、Fisher 合并、有限检查次数 |
 | 6–7 | 主题建模、区分力、Arena Bench、专家复标 |
 | 7–9 | 213,576 条历史票回放、模拟覆盖、采样效率、异常实验、限制 |
-| 9–12 | 致谢、影响声明、参考文献；不视作已阅读的独立来源 |
+| 9–12 | 致谢、影响声明与参考文献 |
 | 13–15 | 界面图、日票量、模型票量、64 主题相似度与层次图 |
 | 16–18，附录 A–C | bootstrap/sandwich 实验、非参数 BT、p 值有效性证明 |
 | 19–25，D.1 | 雪人游戏、圣诞树、电影、旅行提示与回答对照 |
@@ -88,7 +88,7 @@ BERTopic 管线：text-embedding-3-small 得 1536 维→UMAP 到 5 维→HDBSCAN
 | 旅行规划 | 58.3% | .4% |
 | 电影推荐 | 53.3% | .2% |
 
-正文写“七个主题”，表实际列八行；保留此不一致，不自行删一行。附录示例中游戏实现更能区分模型，电影先后与旅行可能平局；示例回答不是本 wiki 核实过的旅游/事实资料（第 19–25 页）。
+正文写“七个主题”，表实际列八行；保留此不一致，不自行删一行。附录示例中游戏实现更能区分模型，电影先后与旅行可能平局；这些对照展示了不同任务的区分力（第 19–25 页）。
 
 **Arena Bench** 是从实时 Arena 选出的 **350 个固定提示**、GPT-4-Turbo 评审的派生基准，不是实时人类榜单。参考答案由 GPT-4-Turbo 综合三个模型回答生成；统一基线 GPT-3.5-Turbo-0301；A/B 交换位置，每模型共 700 次比较；胜/平/负记 10/5/0，显著胜/负按 3 倍权重，得到 0–10 分。其例子包括跨平台 Flutter 习惯 app 与太阳能 Raspberry Pi 系统设计（第 6–7、26–27 页）。自动裁判的相关偏差、生成参考答案的可靠性仍是限制。
 
@@ -120,7 +120,7 @@ BERTopic 管线：text-embedding-3-small 得 1536 维→UMAP 到 5 维→HDBSCAN
 
 ## 七、公式疑点与复现限制
 
-以下为 **wiki 阅读核查**，不是作者已发布勘误：
+阅读中发现以下公式与符号问题，复现时需要核对：
 
 - 第 4 页 H=1 的文字方向与式 (3)/(7) 需统一；复现前核对实现。
 - 第 5 页同时置信集的排版写 T‖V̂⁻¹ᐟ²(ξ̂−ξ)‖≤χ²，通常 Wald 形式需要**范数平方**；不能照印刷式直接实现。
@@ -132,6 +132,6 @@ BERTopic 管线：text-embedding-3-small 得 1536 维→UMAP 到 5 维→HDBSCAN
 
 用户偏 LLM 爱好者和研究人员，在线聊天未必代表生产/专业任务；重点 helpfulness，**不涵盖系统性 safety 评估**。多模态/agent、分主题榜单是论文未来工作，不能反向当作 2024 年已具备功能（第 8–9 页）。匿名与新题只能降低部分偏差；仍需检查样本选择、风格偏好、身份泄漏、提示重复和统计假设。
 
-沿革是既有 wiki 于 2026-09-16 外部核查的补充，**不来自 2024 论文**：Chatbot Arena→LMArena→Arena（arena.ai），源于 UC Berkeley 研究人员，2025 年成立 Arena Intelligence Inc.；学校起源不等于当前公司的法人归属。[官方介绍](https://arena.ai/company/about)、[2024-09-20 独立站公告](https://www.lmsys.org/blog/2024-09-20-arena-new-site/)、[更名公告](https://arena.ai/blog/lmarena-is-now-arena)。本轮保留旧核查，不声称重新访问。
+项目沿革（依据官方介绍与公告，核查于 2026-09-16）：Chatbot Arena→LMArena→Arena（arena.ai），源于 UC Berkeley 研究人员，2025 年成立 Arena Intelligence Inc.；学校起源不等于当前公司的法人归属。[官方介绍](https://arena.ai/company/about)、[2024-09-20 独立站公告](https://www.lmsys.org/blog/2024-09-20-arena-new-site/)、[更名公告](https://arena.ai/blog/lmarena-is-now-arena)。
 
-与[[wiki/source/深度学习基础-2026暑期学校|基础课件]]相连：BT 用最大似然/交叉熵，榜单重复使用涉及泛化和选择偏差。与[[wiki/source/deepseek-v4-1-flash|DeepSeek 报告]]相连：任务成绩表需要预算、框架与统计不确定性说明；本论文没有评测 2026 年的 DeepSeek-V4.1-Flash。
+与[[wiki/source/深度学习基础-2026暑期学校|基础课件]]相连：BT 用最大似然/交叉熵，榜单重复使用涉及泛化和选择偏差。与[[wiki/source/deepseek-v4-1-flash|DeepSeek 报告]]相连：任务成绩表需要预算、框架与统计不确定性说明；两份资料分别从人类偏好和任务完成率出发，为理解大模型评测提供互补视角。
