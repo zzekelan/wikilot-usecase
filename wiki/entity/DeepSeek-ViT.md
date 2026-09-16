@@ -22,3 +22,5 @@ DeepSeek-ViT 是 V4.1-Flash 使用的视觉编码器，将图像转换为语言�
 ## 关联条目（持续维护）
 
 - [[wiki/entity/DeepSeek-V4.1-Flash|DeepSeek-V4.1-Flash]]：V4.1-Flash 使用该视觉编码器接收图像。
+
+- [[wiki/concept/分布式训练与推理解耦|分布式训练与推理解耦]]：视觉编码器以独立阶段参与多模态训练。
