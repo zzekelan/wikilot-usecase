@@ -143,3 +143,5 @@ BERTopic 管线：text-embedding-3-small 得 1536 维→UMAP 到 5 维→HDBSCAN
 - [[wiki/concept/Bradley-Terry模型与Elo|Bradley–Terry 模型与 Elo]]：展开排名分数的概率模型和估计目标。
 
 - [[wiki/concept/置信区间与近似排名|置信区间与近似排名]]：解释区间、同时保证和近似名次。
+
+- [[wiki/concept/主动采样与逆概率加权|主动采样与逆概率加权]]：连接主动分配评审预算与抽样校正。
