@@ -20,8 +20,8 @@ DeepSeek-AI 的多模态 MoE 模型，接收图像和文本，自回归输出文
 - [[wiki/concept/CED因果编码器解码器|CED]]减少长输入的 decoder prefill。
 - [[wiki/concept/CSA2压缩稀疏注意力|CSA2]]共享 KV/索引，[[wiki/concept/分层稀疏索引|分层索引]]减少后续全范围打分。
 - [[wiki/concept/FP4缓存量化|FP4]]压缩每条缓存；[[wiki/concept/SWA有界重放|SWA 有界重放]]减少持久局部缓存。
-- [[wiki/concept/MoE与多模态负载均衡|MoE]]与 Engram 分别提供稀疏计算容量和查表记忆。
-- [[wiki/concept/Single-Pass-mHC|Single-Pass mHC]]优化残差流搬运，[[wiki/concept/推测解码与DSpark|DSpark]]加速输出生成。
+- [[wiki/concept/混合专家MoE|MoE]]与 Engram 分别提供稀疏计算容量和查表记忆。
+- [[wiki/concept/Single-Pass-mHC|Single-Pass mHC]]优化残差流搬运，[[wiki/entity/DSpark|DSpark]]加速输出生成。
 
 ## 基础模型与后训练模型
 
@@ -35,4 +35,4 @@ Base 用于概率预测和 few-shot 能力评估；后训练模型通过 SFT、R
 
 ## 关联条目（持续维护）
 
-- [[wiki/concept/SFT-RL与OPD|SFT、RL 与 OPD]]：说明基础模型到推理/智能体模型的训练阶段。
+- [[wiki/synthesis/SFT-RL与OPD的分工|SFT、RL 与 OPD 的分工]]：说明基础模型到推理/智能体模型的训练阶段。

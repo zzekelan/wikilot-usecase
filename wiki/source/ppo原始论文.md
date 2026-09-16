@@ -34,4 +34,4 @@ L^{\rm clip}=\hat{\mathbb E}_t[\min(\rho_t\hat A_t,\operatorname{clip}(\rho_t,1-
 
 算法 1：旧策略并行采样 → 估计优势 → 多轮小批量更新 → 将更新后的策略用于下一轮采样。Actor-Critic 实现还包括价值函数误差和可选熵奖励（§5，第 4–5 页）。
 
-原论文场景是连续控制与 Atari，不是语言模型。[[wiki/source/instructgpt|InstructGPT]] 将 PPO 用于语言模型回答策略；其相对 SFT 参考策略的 KL 惩罚，和 PPO 相对一轮旧策略的更新控制不是同一件事。PPO 是强化学习算法之一，不能用 PPO 定义整个 RL。
+原论文场景是连续控制与 Atari，不是语言模型。[[wiki/source/instructgpt|InstructGPT]] 将 PPO 用于语言模型回答策略；其相对 SFT 参考策略的 KL 惩罚，和 PPO 相对一轮旧策略的更新控制不是同一件事。PPO 是[[wiki/concept/强化学习RL|强化学习]]算法之一，不能用 PPO 定义整个 RL。

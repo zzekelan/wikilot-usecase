@@ -26,4 +26,4 @@ CSA2（Compressed Sparse Attention 2）同时利用序列压缩、跨层 KV 共�
 
 - [[wiki/concept/分层稀疏索引|分层稀疏索引]]：减少 Reindex 层的全上下文扫描。
 
-- [[wiki/concept/分布式训练与推理解耦|分布式训练与推理解耦]]：说明跨流水线阶段的共享实现。
+- [[wiki/concept/跨层共享状态管理|跨层共享状态管理]]：说明跨流水线阶段的共享实现。

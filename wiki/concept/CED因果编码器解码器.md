@@ -2,7 +2,7 @@
 
 ## 架构与动机
 
-CED（Causal Encoder–Decoder）把因果 Transformer 的前半层视为 encoder，后半层视为 decoder。与经典双向编码器的序列到序列模型不同，这里的 encoder 也是因果的，整个模型仍自回归生成文本。目标是降低输入占比很高的智能体工作流中的[[wiki/concept/KV缓存与预填充解码|prefill 成本]]。来源：[[wiki/source/deepseek-v4-1-flash|报告]]第 7–9 页。
+CED（Causal Encoder–Decoder）把因果 Transformer 的前半层视为 encoder，后半层视为 decoder。与经典双向编码器的序列到序列模型不同，这里的 encoder 也是因果的，整个模型仍自回归生成文本。目标是降低输入占比很高的智能体工作流中的[[wiki/concept/预填充|prefill 成本]]。来源：[[wiki/source/deepseek-v4-1-flash|报告]]第 7–9 页。
 
 ## 核心：decoder KV 从哪里来
 

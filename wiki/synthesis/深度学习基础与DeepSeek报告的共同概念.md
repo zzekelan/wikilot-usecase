@@ -8,12 +8,12 @@
 
 基础概念在报告中对应到训练配置、网络组件和评估指标。各概念的定义、例子与区别已整理为以下页面：
 
-- [[wiki/concept/交叉熵-困惑度与BPB|交叉熵、困惑度与 BPB]]：理解研发语料的概率预测评估。
-- [[wiki/concept/泛化与数据质量|泛化与数据质量]]：理解训练表现、数据建设与实际能力的关系。
-- [[wiki/concept/动量-AdamW与权重衰减|动量、AdamW 与权重衰减]]：理解按参数类型选择优化器。
-- [[wiki/concept/学习率与批量调度|学习率与批量调度]]：理解预热和衰减的训练日程。
-- [[wiki/concept/非线性表示与归一化|非线性表示与归一化]]：理解激活、MLP 和 RMSNorm。
-- [[wiki/concept/Softmax与温度采样|Softmax 与温度采样]]：理解概率分布和生成配置。
+- [[wiki/synthesis/交叉熵-PPL与BPB的换算|交叉熵、困惑度与 BPB 的换算]]：理解研发语料的概率预测评估。
+- [[wiki/synthesis/数据质量与泛化评估|泛化与数据质量]]：理解训练表现、数据建设与实际能力的关系。
+- [[wiki/synthesis/动量与自适应优化器的分工|动量、AdamW 与权重衰减]]：理解按参数类型选择优化器。
+- [[wiki/synthesis/学习率与批量的联合调度|学习率与批量调度]]：理解预热和衰减的训练日程。
+- [[wiki/synthesis/非线性表示与归一化组件对照|非线性表示与归一化]]：理解激活、MLP 和 RMSNorm。
+- [[wiki/synthesis/从logits到生成采样|从 logits 到生成采样]]：理解概率分布和生成配置。
 
 ## 核心对应
 
@@ -54,13 +54,13 @@ L=-\frac{1}{T}\sum_{t=1}^{T}\ln p(x_t\mid x_{<t}),\qquad \mathrm{PPL}=e^L.
 | 内部代码 | .1562 | .1494 | .1443 |
 | 学术资料 | .4929 | .4677 | .4305 |
 
-这些结果将课件中的概率损失落实到研发语料建模；实际任务是否完成则需结合[[wiki/concept/评测指标与可比性|任务指标]]评估。
+这些结果将课件中的概率损失落实到研发语料建模；实际任务是否完成则需结合[[wiki/synthesis/评测指标的对象与可比条件|任务指标]]评估。
 
 ## 基础概念如何扩展成实际方案
 
-1. **AdamW 基础不等于整套优化方案。** 课件解释动量、尺度调整和解耦衰减；[[wiki/concept/Muon与Sinkhorn矩阵优化|Muon 与 Sinkhorn]]进一步利用矩阵的头、行与列结构。报告按参数类型分别指定优化器，不能概括为“整个模型使用 AdamW”（报告第 15、22 页）。
-2. **归一化是共同主题，具体方法不同。** 课件展开 BN/LN；报告明确使用 RMSNorm。RMSNorm 按均方根调整尺度，通常不做 LayerNorm 的减均值步骤，不能当作同一公式。公式对照见[[wiki/concept/非线性表示与归一化|归一化概念页]]。
-3. **数据增强、标签平滑与后训练任务合成、蒸馏有联系，但并不相同。** 课件的数据增强强调合适的不变性；报告生成新的任务、环境和验证信号。课件的[[wiki/concept/标签平滑与置信度校准|标签平滑]]人为调整目标分布；报告的[[wiki/concept/SFT-RL与OPD|全词表 OPD]]在学生生成的上下文上学习教师分布（课件第 87 页；报告第 25、31–32 页）。
+1. **AdamW 基础不等于整套优化方案。** 课件解释动量、尺度调整和解耦衰减；[[wiki/synthesis/矩阵参数与嵌入表的优化器选择|Muon 与 Sinkhorn]]进一步利用矩阵的头、行与列结构。报告按参数类型分别指定优化器，不能概括为“整个模型使用 AdamW”（报告第 15、22 页）。
+2. **归一化是共同主题，具体方法不同。** 课件展开 BN/LN；报告明确使用 RMSNorm。RMSNorm 按均方根调整尺度，通常不做 LayerNorm 的减均值步骤，不能当作同一公式。具体公式分别见[[wiki/concept/BatchNorm|BatchNorm]]、[[wiki/concept/LayerNorm|LayerNorm]]和[[wiki/concept/RMSNorm|RMSNorm]]；组件分工见[[wiki/synthesis/非线性表示与归一化组件对照|组件对照]]。
+3. **数据增强、标签平滑与后训练任务合成、蒸馏有联系，但并不相同。** 课件的数据增强强调合适的不变性；报告生成新的任务、环境和验证信号。课件的[[wiki/concept/标签平滑|标签平滑]]人为调整目标分布；报告的[[wiki/concept/在策略蒸馏OPD|全词表 OPD]]在学生生成的上下文上学习教师分布（课件第 87 页；报告第 25、31–32 页）。
 
 ## 建议阅读顺序
 
@@ -68,9 +68,9 @@ L=-\frac{1}{T}\sum_{t=1}^{T}\ln p(x_t\mid x_{<t}),\qquad \mathrm{PPL}=e^L.
 
 ## 从基础进入模型架构与后训练
 
-1. 从非线性表示读到[[wiki/concept/MoE与多模态负载均衡|稀疏专家]]和[[wiki/entity/DeepSeek-ViT|视觉编码器]]：增加容量与输入模态。
-2. 从计算代价读到[[wiki/concept/KV缓存与预填充解码|KV、prefill/decode]]，再读[[wiki/concept/CED因果编码器解码器|CED]]、[[wiki/concept/CSA2压缩稀疏注意力|CSA2]]、[[wiki/concept/FP4缓存量化|FP4]]和[[wiki/concept/SWA有界重放|SWA 重放]]：分别改变计算路径、共享状态、位宽和缓存生命周期。
-3. 从数据质量读到[[wiki/concept/智能体任务合成与验证|任务合成]]、[[wiki/concept/异步RL与离策略样本|异步后训练]]：将数据和优化问题扩展到长时程交互。
-4. 从学习率等训练配置读到[[wiki/concept/推理力度与测试时计算|推理力度]]与[[wiki/concept/智能体框架与评测协议|框架]]：区分训练时参数更新和推理时资源分配。
+1. 从非线性表示读到[[wiki/concept/混合专家MoE|稀疏专家]]和[[wiki/entity/DeepSeek-ViT|视觉编码器]]：增加容量与输入模态。
+2. 从计算代价读到[[wiki/synthesis/预填充-解码与缓存复用|KV、prefill/decode]]，再读[[wiki/concept/CED因果编码器解码器|CED]]、[[wiki/concept/CSA2压缩稀疏注意力|CSA2]]、[[wiki/concept/FP4缓存量化|FP4]]和[[wiki/concept/SWA有界重放|SWA 重放]]：分别改变计算路径、共享状态、位宽和缓存生命周期。
+3. 从数据质量读到[[wiki/concept/智能体任务合成|任务合成]]、[[wiki/synthesis/异步采样的分布与状态管理|异步后训练]]：将数据和优化问题扩展到长时程交互。
+4. 从学习率等训练配置读到[[wiki/concept/推理力度|推理力度]]与[[wiki/concept/智能体框架|框架]]：区分训练时参数更新和推理时资源分配。
 
 加入 Arena 后的完整主线见[[wiki/synthesis/从学习目标到智能体与人类偏好评测|从学习目标到智能体与人类偏好评测]]。

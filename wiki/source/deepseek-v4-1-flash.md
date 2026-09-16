@@ -61,7 +61,7 @@ DeepSeek-ViT 为 32 层、维度 1024、16 头、patch=14；用 2D-RoPE 支持�
 
 文本侧强调信息增益、scaling ladder、领域专家质量评估，以及较新的仓库、提交、依赖和框架；过滤弱模型生成和低质量机器翻译等“隐式重复”。多模态侧以原生网页/PDF 为主，包含图文对、交错图文和领域数据；从 Common Crawl 重新构建覆盖，先廉价过滤再下载图像，再做图像感知去重和 SmolVLM 评分，部分淘汰文档回收为图文对，补充 OCR、grounding、pointing、图像代码及 computer-use 轨迹。纯文本与多模态重叠样本优先保留后者，最终 token 比 **7:1**，packing padding≤10⁻⁴。出处：第 20–21 页。
 
-总训练 **45T token**；固定 batch **100.6M token**；从 64K 稀疏注意力起训、无 dense warmup，在 34T 扩至 1M。前 2000 步线性预热，至 28T 保持 2.6×10⁻⁴，28T–40T 余弦降到 2.6×10⁻⁵，40T–45T 保持；28T 开始解冻视觉编码器（第 15、22 页）。详见[[wiki/concept/学习率与批量调度|训练调度]]。
+总训练 **45T token**；固定 batch **100.6M token**；从 64K 稀疏注意力起训、无 dense warmup，在 34T 扩至 1M。前 2000 步线性预热，至 28T 保持 2.6×10⁻⁴，28T–40T 余弦降到 2.6×10⁻⁵，40T–45T 保持；28T 开始解冻视觉编码器（第 15、22 页）。详见[[wiki/synthesis/学习率与批量的联合调度|训练调度]]。
 
 | 参数组 | 优化与关键参数（第 15–16、22 页） |
 | --- | --- |
@@ -69,7 +69,7 @@ DeepSeek-ViT 为 32 层、维度 1024、16 头、patch=14；用 2D-RoPE 支持�
 | 线性矩阵/投影器 | Muon；Q/K 按 head 分块；Nesterov momentum=.95、decay=.1；更新 RMS=.18 |
 | Engram、token embedding、预测头 | 动量后做 Sinkhorn 行列归一化，K=11、τ=10⁻³、ε=10⁻²⁰、学习率修正 .18；无 weight decay；Engram 学习率再×5 |
 
-多模态路由 bias 更新速率均 .001，同时仍保留权重 .0001 的序列级平衡损失；“auxiliary-loss-free”不能理解为整个训练完全无平衡辅助项。使用 sample-level attention mask（第 22 页）。基础解释见[[wiki/concept/动量-AdamW与权重衰减|优化器]]、[[wiki/concept/泛化与数据质量|数据与泛化]]。
+多模态路由 bias 更新速率均 .001，同时仍保留权重 .0001 的序列级平衡损失；“auxiliary-loss-free”不能理解为整个训练完全无平衡辅助项。使用 sample-level attention mask（第 22 页）。基础解释见[[wiki/concept/Adam|优化器]]、[[wiki/synthesis/数据质量与泛化评估|数据与泛化]]。
 
 ## 四、基础模型完整结果：表 1 与图 6
 
@@ -110,11 +110,13 @@ V4-Flash/V4-Pro 的主干参数分别 284B/1.6T，激活 13B/49B；本代 552B�
 
 以 (旧−新)/旧计算，相对 V4-Flash 下降约 **8.6%/7.6%/12.7%**，相对 V4-Pro 约 **4.4%/3.4%/8.0%**（wiki 按图值计算）。第 6 页的“5%–10%”概括不是每类、每个对照均成立的精确区间。全文未找到这些内部集的样本量、逐项训练隔离/去重审计、误差条或公开下载地址；“held-out”不足以补全这些信息。
 
-BPB 与 PPL 同源于负对数概率但归一化不同；例如单 token 概率 .5 对应单步 PPL=2，**不是 BPB=2**。完整定义见[[wiki/concept/交叉熵-困惑度与BPB|概率预测指标]]。作者说 API 无法进行此类测试，应读作其所用 API 的限制；支持充分 logprob 的其他接口未必如此。更低 BPB 不等于已验证能独立完成研发。
+BPB 与 PPL 同源于负对数概率但归一化不同；例如单 token 概率 .5 对应单步 PPL=2，**不是 BPB=2**。完整定义见[[wiki/synthesis/交叉熵-PPL与BPB的换算|概率预测指标换算]]。作者说 API 无法进行此类测试，应读作其所用 API 的限制；支持充分 logprob 的其他接口未必如此。更低 BPB 不等于已验证能独立完成研发。
+
+独立指标页：[[wiki/concept/困惑度PPL|困惑度（PPL）]]解释 token 归一化，[[wiki/concept/每字节比特数BPB|BPB]]解释字节归一化；采样协议中的 [[wiki/concept/核采样top-p|top-p]] 则控制候选截断，不是概率评测指标。
 
 ## 五、后训练与智能体环境
 
-作者明确沿用 **SFT→RL→OPD**，不主张新后训练算法，主要归因于数据/环境工程；其“几乎全部提升来自数据”的归因属于作者结论，报告未提供足够隔离消融让本 wiki 独立确认（第 6、25 页）。
+作者明确沿用 **[[wiki/concept/监督微调SFT|SFT]]→[[wiki/concept/强化学习RL|RL]]→[[wiki/concept/在策略蒸馏OPD|OPD]]**，不主张新后训练算法，主要归因于数据/环境工程；其“几乎全部提升来自数据”的归因属于作者结论，报告未提供足够隔离消融让本 wiki 独立确认（第 6、25 页）。
 
 1. **任务三元组**＝问题、环境、验证系统；以难度和正确性训练构题能力，轨迹在后续 RL 中持续复审质量。
 2. **通用智能体**：员工/合作方自愿反馈的工作流、接口和失败案例，生成 mocked 工具、单多轮环境，不应理解为公开用户生产数据均可随意使用。
@@ -151,7 +153,7 @@ BPB 与 PPL 同源于负对数概率但归一化不同；例如单 token 概率 
 | BabyVision with tools（Pass@1） | 94.1 | 88.9 | 85.7 | — | — | — | 89.6 |
 | ZeroBench-main with tools（Pass@5） | 52.0 | 53.0 | 41.0 | — | — | — | 49.0 |
 
-协议（第 32、35、47–48 页）：推理温度/top-p=1/1；代码智能体通常 DSH Minimal、1M context、1/.95，DeepSWE 改用 mini-SWE，SEC-Bench Pro（260505）用 Claude Code；视觉 agent 用 Claude Code、512K；AutomationBench v1.0.6 公开集与 ALE-CLI 用官方 scaffold。评测限制网络、移除 Git 历史和临时 build/package cache，仍观察到投机行为。不能把工具辅助结果当成纯模型闭卷分数。采样概念见[[wiki/concept/Softmax与温度采样|Softmax 与温度采样]]。
+协议（第 32、35、47–48 页）：推理温度/top-p=1/1；代码智能体通常 DSH Minimal、1M context、1/.95，DeepSWE 改用 mini-SWE，SEC-Bench Pro（260505）用 Claude Code；视觉 agent 用 Claude Code、512K；AutomationBench v1.0.6 公开集与 ALE-CLI 用官方 scaffold。评测限制网络、移除 Git 历史和临时 build/package cache，仍观察到投机行为。不能把工具辅助结果当成纯模型闭卷分数。采样概念见[[wiki/synthesis/从logits到生成采样|从 logits 到生成采样]]。
 
 表 4（第 35 页）的 **同一 checkpoint** 跨框架结果：
 
@@ -191,9 +193,9 @@ BPB 与 PPL 同源于负对数概率但归一化不同；例如单 token 概率 
 
 ## 关联条目（持续维护）
 
-- [[wiki/concept/Muon与Sinkhorn矩阵优化|Muon 与 Sinkhorn 矩阵优化]]：展开混合优化器方案及算法 1。
+- [[wiki/synthesis/矩阵参数与嵌入表的优化器选择|Muon 与 Sinkhorn 矩阵优化]]：展开混合优化器方案及算法 1。
 
-- [[wiki/concept/KV缓存与预填充解码|KV 缓存与预填充、解码]]：解释报告降低部署成本时使用的缓存与推理阶段口径。
+- [[wiki/synthesis/预填充-解码与缓存复用|KV 缓存与预填充、解码]]：解释报告降低部署成本时使用的缓存与推理阶段口径。
 
 - [[wiki/concept/CED因果编码器解码器|CED 因果编码器–解码器]]：展开降低 prefill 计算的因果编码器–解码器。
 
@@ -205,38 +207,120 @@ BPB 与 PPL 同源于负对数概率但归一化不同；例如单 token 概率 
 
 - [[wiki/concept/FP4缓存量化|FP4 缓存量化]]：说明主 KV 低精度布局与 QAT。
 
-- [[wiki/concept/MoE与多模态负载均衡|MoE 与多模态负载均衡]]：展开 DeepSeekMoE 的专家配置与图文分模态路由。
+- [[wiki/synthesis/稀疏专家与模态负载控制|MoE 与多模态负载均衡]]：展开 DeepSeekMoE 的专家配置与图文分模态路由。
 
 - [[wiki/concept/Single-Pass-mHC|Single-Pass mHC]]：解释 Mega-mHC 内核融合所依赖的结构改变。
 
 - [[wiki/entity/Engram|Engram]]：记录条件记忆模块的配置与训练/部署关系。
 
-- [[wiki/concept/推测解码与DSpark|推测解码与 DSpark]]：解释 DSpark 的草拟、验证与训练阶段。
+- [[wiki/concept/推测解码|推测解码与 DSpark]]：解释 DSpark 的草拟、验证与训练阶段。
 
 - [[wiki/entity/DeepSeek-ViT|DeepSeek-ViT]]：集中说明视觉编码器及其两阶段训练。
 
 - [[wiki/entity/DeepSeek-V4.1-Flash|DeepSeek-V4.1-Flash]]：作为模型实体总览，连接架构组件与完整结果。
 
-- [[wiki/concept/分布式训练与推理解耦|分布式训练与推理解耦]]：串联多模态训练、共享状态、Engram 分片和 EPD 部署。
+- [[wiki/synthesis/分布式执行的解耦-共享与融合|分布式训练与推理解耦]]：串联多模态训练、共享状态、Engram 分片和 EPD 部署。
 
-- [[wiki/concept/SFT-RL与OPD|SFT、RL 与 OPD]]：整理后训练流程与多教师蒸馏。
+- [[wiki/synthesis/SFT-RL与OPD的分工|SFT、RL 与 OPD 的分工]]：整理后训练流程与多教师蒸馏。
 
-- [[wiki/concept/智能体任务合成与验证|智能体任务合成与验证]]：展开自动任务生产、质检和修复循环。
+- [[wiki/synthesis/智能体任务的构建与质量闭环|智能体任务合成与验证]]：展开自动任务生产、质检和修复循环。
 
 - [[wiki/entity/DSec|DSec]]：记录智能体沙箱平台的身份、调度和隔离设计。
 
-- [[wiki/concept/异步RL与离策略样本|异步 RL 与离策略样本]]：解释异步后训练调度和两类偏差修正。
+- [[wiki/synthesis/异步采样的分布与状态管理|异步 RL 与离策略样本]]：解释异步后训练调度和两类偏差修正。
 
-- [[wiki/concept/推理力度与测试时计算|推理力度与测试时计算]]：展开力度条件、长度奖励、预算曲线和附录推导。
+- [[wiki/concept/推理力度|推理力度与测试时计算]]：展开力度条件、长度奖励、预算曲线和附录推导。
 
-- [[wiki/concept/智能体框架与评测协议|智能体框架与评测协议]]：解释跨框架成绩差异与复现配置。
+- [[wiki/synthesis/模型-框架与评测协议的比较边界|智能体框架与评测协议]]：解释跨框架成绩差异与复现配置。
 
 - [[wiki/entity/DeepSeek-Harness|DeepSeek Harness]]：集中记录框架模式与协作接口。
 
-- [[wiki/concept/多智能体协作与关键路径|多智能体协作与关键路径]]：解释多智能体协作奖励与初步实验。
+- [[wiki/synthesis/多智能体协作的时间与计算成本|多智能体协作与关键路径]]：解释多智能体协作奖励与初步实验。
 
-- [[wiki/concept/评测指标与可比性|评测指标与可比性]]：统一解释结果表中的不同指标与采样口径。
+- [[wiki/synthesis/评测指标的对象与可比条件|评测指标与可比性]]：统一解释结果表中的不同指标与采样口径。
 
-- [[wiki/concept/评测污染与奖励投机|评测污染与奖励投机]]：串联任务质检、沙箱隔离和评测防投机。
+- [[wiki/synthesis/评测泄漏-选择偏差与奖励投机的治理|评测污染与奖励投机]]：串联任务质检、沙箱隔离和评测防投机。
 
 - [[wiki/synthesis/从学习目标到智能体与人类偏好评测|从学习目标到智能体与人类偏好评测]]：从基础学习目标连接到智能体系统及多层评测。
+
+## 独立概念与方法
+
+- [[wiki/concept/数据质量|数据质量]]：正确性、覆盖、去重和目标相关性共同决定有效训练信息。
+
+- [[wiki/concept/SwiGLU|SwiGLU]]：以 SiLU 门控分支和特征分支相乘构成前馈结构。
+
+- [[wiki/concept/RMSNorm|RMSNorm]]：按均方根归一化特征，通常省略减均值步骤。
+
+- [[wiki/concept/Muon|Muon]]：对动量矩阵近似正交化并缩放的优化方法。
+
+- [[wiki/concept/Sinkhorn矩阵更新|Sinkhorn 矩阵更新]]：对有效更新行列交替归一化，近似均衡 RMS。
+
+- [[wiki/concept/KV缓存|KV 缓存]]：保存历史 Key/Value，避免自回归生成时反复计算前缀。
+
+- [[wiki/concept/预填充|预填充]]：批量处理已知输入并建立后续生成所需状态。
+
+- [[wiki/concept/自回归解码|自回归解码]]：按已生成前缀逐步预测新 token 的生成阶段。
+
+- [[wiki/concept/前缀缓存复用|前缀缓存复用]]：跨请求复用相同前缀的状态，减少重复计算。
+
+- [[wiki/concept/混合专家MoE|混合专家（MoE）]]：按 token 选择少量专家子网络进行条件计算。
+
+- [[wiki/concept/多模态专家负载均衡|多模态专家负载均衡]]：按模态独立调节专家选择，避免总量均衡掩盖模态内偏斜。
+
+- [[wiki/concept/推测解码|推测解码]]：用轻量草拟和主模型验证减少昂贵串行生成。
+
+- [[wiki/entity/DSpark|DSpark]]：DeepSeek 的半自回归草拟与置信度调度模块。
+
+- [[wiki/concept/多模态训练解耦|多模态训练解耦]]：把视觉与语言阶段分开调度，使各自适配资源需求。
+
+- [[wiki/concept/通信计算重叠|通信—计算重叠]]：通过依赖调度让通信或 I/O 隐藏在可并行计算之下。
+
+- [[wiki/concept/跨层共享状态管理|跨层共享状态管理]]：在流水线设备边界上维持共享缓存、索引和训练状态的一致生命周期。
+
+- [[wiki/concept/EPD推理解耦|EPD 推理解耦]]：让视觉编码、输入预填充和输出解码独立扩展。
+
+- [[wiki/concept/内核融合|内核融合]]：将兼容操作合并执行以减少启动与中间显存读写。
+
+- [[wiki/concept/滑动窗口注意力SWA|滑动窗口注意力（SWA）]]：每层只关注当前位置附近固定宽度的历史窗口。
+
+- [[wiki/concept/数值量化|数值量化]]：用有限低位宽表示近似数值，以精度换取存储或计算收益。
+
+- [[wiki/concept/量化感知训练QAT|量化感知训练（QAT）]]：训练中引入量化效果，使模型适应部署精度。
+
+- [[wiki/concept/流形约束超连接mHC|流形约束超连接（mHC）]]：以受约束的混合映射在块间传递多条残差流。
+
+- [[wiki/concept/智能体任务合成|智能体任务合成]]：生成一致的问题、可执行环境和验证系统，扩展交互任务分布。
+
+- [[wiki/concept/任务验证|任务验证]]：检查智能体任务的完成程度及问题、环境与评分的一致性。
+
+- [[wiki/concept/异步强化学习|异步强化学习]]：不等待整批最长轨迹，以在途采样和训练调度提高利用率。
+
+- [[wiki/concept/离策略样本|离策略样本]]：采样行为策略与当前更新策略不一致的经验数据。
+
+- [[wiki/concept/训练样本长度偏差|训练样本长度偏差]]：按完成速度收集轨迹时，短样本被优先纳入训练的偏差。
+
+- [[wiki/concept/测试时计算|测试时计算]]：在固定模型权重下分配额外推理、工具或多次尝试资源。
+
+- [[wiki/concept/推理力度|推理力度]]：以输入条件和训练奖励引导模型使用不同程度的推理资源。
+
+- [[wiki/concept/智能体框架|智能体框架]]：组织提示、工具、上下文与执行循环的模型外运行机制。
+
+- [[wiki/concept/评测协议|评测协议]]：规定模型、数据、环境、生成和统计口径以支持复现比较。
+
+- [[wiki/concept/多智能体协作|多智能体协作]]：由多个智能体分工、交流与汇总完成任务。
+
+- [[wiki/concept/关键路径延迟|关键路径延迟]]：依赖图最长路径决定的完成时间，区别于总工作量。
+
+- [[wiki/concept/完全匹配率EM|完全匹配率（EM）]]：按指定归一化规则与标准答案完全匹配的比例。
+
+- [[wiki/concept/F1分数|F1 分数]]：精确率与召回率的调和平均，依赖匹配单位与聚合方式。
+
+- [[wiki/concept/Pass-at-k|Pass@k]]：k 次候选中至少一次达到成功条件的概率。
+
+- [[wiki/concept/Mean-at-k|Mean@k]]：同一任务 k 次尝试得分的平均，而非至少一次成功率。
+
+- [[wiki/concept/任务解决率Resolved|任务解决率（Resolved）]]：按基准完成条件判定单次任务是否解决，再汇总成功比例。
+
+- [[wiki/concept/Almost-at-1|Almost@1]]：按一次尝试达到指定近完成阈值统计成功比例。
+
+- [[wiki/concept/奖励投机|奖励投机]]：通过评分代理或环境漏洞得分，而非完成预定目标。

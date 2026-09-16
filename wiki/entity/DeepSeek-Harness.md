@@ -2,7 +2,7 @@
 
 ## 身份
 
-DeepSeek Harness（DSH）是 DeepSeek 的智能体执行框架，为模型提供工具、任务循环和协作机制。它是[[wiki/concept/智能体框架与评测协议|harness]]，与语言模型本身分工不同。[项目地址](https://github.com/deepseek-ai/deepseek-harness)。来源：[[wiki/source/deepseek-v4-1-flash|报告]]第 34–36、39、48 页。
+DeepSeek Harness（DSH）是 DeepSeek 的智能体执行框架，为模型提供工具、任务循环和协作机制。它是[[wiki/concept/智能体框架|智能体框架（harness）]]，与语言模型本身分工不同。[项目地址](https://github.com/deepseek-ai/deepseek-harness)。来源：[[wiki/source/deepseek-v4-1-flash|报告]]第 34–36、39、48 页。
 
 ## 三种单智能体模式
 
@@ -22,4 +22,4 @@ Standard/PTC 使用 v0.1.1+custom.202609011522。模式改变的是模型与外�
 
 ## 关联条目（持续维护）
 
-- [[wiki/concept/多智能体协作与关键路径|多智能体协作与关键路径]]：展开 Agent Team 的协调机制与关键路径。
+- [[wiki/synthesis/多智能体协作的时间与计算成本|多智能体协作与关键路径]]：展开 Agent Team 的协调机制与关键路径。

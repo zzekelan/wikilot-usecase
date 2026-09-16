@@ -17,10 +17,10 @@ DeepSeek-ViT 是 V4.1-Flash 使用的视觉编码器，将图像转换为语言�
 
 ## 与其他组件的联系
 
-[[wiki/concept/非线性表示与归一化|MLP、SwiGLU 与 RMSNorm]]构成视觉到语言的表示桥梁；[[wiki/concept/Muon与Sinkhorn矩阵优化|Muon]]影响线性 patch 投影的设计；图像与文本进入同一主干后由[[wiki/concept/MoE与多模态负载均衡|分模态 MoE 负载均衡]]协调专家使用。
+[[wiki/synthesis/非线性表示与归一化组件对照|MLP、SwiGLU 与 RMSNorm]]构成视觉到语言的表示桥梁；[[wiki/concept/Muon|Muon]]影响线性 patch 投影的设计；图像与文本进入同一主干后由[[wiki/concept/多模态专家负载均衡|分模态 MoE 负载均衡]]协调专家使用。
 
 ## 关联条目（持续维护）
 
 - [[wiki/entity/DeepSeek-V4.1-Flash|DeepSeek-V4.1-Flash]]：V4.1-Flash 使用该视觉编码器接收图像。
 
-- [[wiki/concept/分布式训练与推理解耦|分布式训练与推理解耦]]：视觉编码器以独立阶段参与多模态训练。
+- [[wiki/concept/多模态训练解耦|多模态训练解耦]]：视觉编码器以独立阶段参与多模态训练。

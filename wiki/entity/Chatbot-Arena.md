@@ -14,11 +14,11 @@ LMSYS-Chat-1M 是更早的对话数据集，缺少直接用于排名的偏好标
 
 ## 方法关系
 
-- [[wiki/concept/人类偏好与成对比较|匿名成对比较]]提供反馈。
-- [[wiki/concept/Bradley-Terry模型与Elo|BT 模型]]估计分数。
-- [[wiki/concept/置信区间与近似排名|同时区间]]描述名次不确定性。
-- [[wiki/concept/主动采样与逆概率加权|主动采样与加权]]提高预算效率并校正模型对分配。
-- [[wiki/concept/主题建模与LLM评审|主题分析]]与[[wiki/concept/异常投票检测|异常筛查]]检查数据结构和质量。
+- [[wiki/concept/成对比较|匿名成对比较]]提供反馈。
+- [[wiki/concept/Bradley-Terry模型|BT 模型]]估计分数。
+- [[wiki/concept/同时统计推断|同时区间]]描述名次不确定性。
+- [[wiki/synthesis/主动分配评审预算与估计校正|主动采样与加权]]提高预算效率并校正模型对分配。
+- [[wiki/concept/主题建模|主题分析]]与[[wiki/concept/异常投票检测|异常筛查]]检查数据结构和质量。
 
 ## 项目沿革
 
