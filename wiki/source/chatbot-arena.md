@@ -135,3 +135,7 @@ BERTopic 管线：text-embedding-3-small 得 1536 维→UMAP 到 5 维→HDBSCAN
 项目沿革（依据官方介绍与公告，核查于 2026-09-16）：Chatbot Arena→LMArena→Arena（arena.ai），源于 UC Berkeley 研究人员，2025 年成立 Arena Intelligence Inc.；学校起源不等于当前公司的法人归属。[官方介绍](https://arena.ai/company/about)、[2024-09-20 独立站公告](https://www.lmsys.org/blog/2024-09-20-arena-new-site/)、[更名公告](https://arena.ai/blog/lmarena-is-now-arena)。
 
 与[[wiki/source/深度学习基础-2026暑期学校|基础课件]]相连：BT 用最大似然/交叉熵，榜单重复使用涉及泛化和选择偏差。与[[wiki/source/deepseek-v4-1-flash|DeepSeek 报告]]相连：任务成绩表需要预算、框架与统计不确定性说明；两份资料分别从人类偏好和任务完成率出发，为理解大模型评测提供互补视角。
+
+## 关联条目（持续维护）
+
+- [[wiki/concept/人类偏好与成对比较|人类偏好与成对比较]]：解释匿名众包选择的目标和反馈含义。
