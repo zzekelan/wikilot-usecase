@@ -25,3 +25,5 @@ CED 决定 KV 的**生成来源**；跨层 KV 共享决定**哪些层复用它**
 ## 关联条目（持续维护）
 
 - [[wiki/concept/CSA2压缩稀疏注意力|CSA2 压缩稀疏注意力]]：在 CED 的 KV 生成机制上叠加跨层共享。
+
+- [[wiki/concept/SWA有界重放|SWA 有界重放]]：提供 decoder 局部 KV 的低成本恢复路径。
