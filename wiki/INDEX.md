@@ -26,6 +26,7 @@
 - [[wiki/concept/CSA2压缩稀疏注意力|CSA2 压缩稀疏注意力]] — 用 Full、Reindex、Reuse 三种模式解耦 KV 共享和稀疏索引复用。
 - [[wiki/concept/分层稀疏索引|分层稀疏索引]] — 先全局选择候选块，再在共享候选池中进行各层 Top-K 重选。
 - [[wiki/concept/SWA有界重放|SWA 有界重放]] — 以最近一个窗口的近似重算替代长期保存局部 KV，并支持 CED 预填充。
+- [[wiki/concept/FP4缓存量化|FP4 缓存量化]] — 区分主 KV、索引器与局部缓存的精度选择，以及 QAT 的作用。
 
 ## 跨来源对照
 
