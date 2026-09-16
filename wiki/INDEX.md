@@ -75,3 +75,4 @@
 - [[wiki/entity/DeepSeek-V4.1-Flash|DeepSeek-V4.1-Flash]] — 多模态 MoE 模型的身份、核心规格、组件关系和能力轮廓。
 - [[wiki/entity/DSec|DSec]] — DeepSeek Elastic Compute：支持大规模智能体训练与评测的沙箱平台。
 - [[wiki/entity/DeepSeek-Harness|DeepSeek Harness]] — DeepSeek 智能体框架的 Minimal、Standard、PTC 与 Agent Team 模式。
+- [[wiki/entity/Chatbot-Arena|Chatbot Arena]] — 众包匿名成对评测平台：数据、统计排名和后续项目沿革。
