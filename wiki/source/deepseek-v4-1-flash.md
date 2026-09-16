@@ -204,3 +204,5 @@ BPB 与 PPL 同源于负对数概率但归一化不同；例如单 token 概率 
 - [[wiki/concept/SWA有界重放|SWA 有界重放]]：展开运行时与持久缓存之间的存储–重算权衡。
 
 - [[wiki/concept/FP4缓存量化|FP4 缓存量化]]：说明主 KV 低精度布局与 QAT。
+
+- [[wiki/concept/MoE与多模态负载均衡|MoE 与多模态负载均衡]]：展开 DeepSeekMoE 的专家配置与图文分模态路由。
