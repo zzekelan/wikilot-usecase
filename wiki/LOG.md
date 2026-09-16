@@ -167,3 +167,8 @@
 
 - 完成[[wiki/entity/Engram|Engram]]：DeepSeek 的条件记忆模块：ngram 哈希查表、上下文门控与确定性预取。
 - 同步[[wiki/INDEX|索引]]及相关来源/概念回链；本条目独立提交。
+
+## [2026-09-16] 条目整理 | 推测解码与 DSpark
+
+- 完成[[wiki/concept/推测解码与DSpark|推测解码与 DSpark]]：草拟多个 token，再由主模型验证；DSpark 用置信度和负载选择验证长度。
+- 同步[[wiki/INDEX|索引]]及相关来源/概念回链；本条目独立提交。

@@ -29,6 +29,7 @@
 - [[wiki/concept/FP4缓存量化|FP4 缓存量化]] — 区分主 KV、索引器与局部缓存的精度选择，以及 QAT 的作用。
 - [[wiki/concept/MoE与多模态负载均衡|MoE 与多模态负载均衡]] — 解释共享/路由专家、总参数与激活参数，以及分模态路由偏置。
 - [[wiki/concept/Single-Pass-mHC|Single-Pass mHC]] — 通过错位使用混合系数消除依赖，使多残差流处理可融合为单遍。
+- [[wiki/concept/推测解码与DSpark|推测解码与 DSpark]] — 草拟多个 token，再由主模型验证；DSpark 用置信度和负载选择验证长度。
 
 ## 跨来源对照
 

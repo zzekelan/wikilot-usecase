@@ -37,3 +37,5 @@
 - [[wiki/concept/SWA有界重放|SWA 有界重放]]：按缓存生命周期决定持久化与重算。
 
 - [[wiki/concept/FP4缓存量化|FP4 缓存量化]]：从每元素位宽维度缩小缓存。
+
+- [[wiki/concept/推测解码与DSpark|推测解码与 DSpark]]：补充解码阶段的吞吐优化。
