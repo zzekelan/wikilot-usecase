@@ -10,6 +10,8 @@
 
 ## 来源笔记
 
+- [[wiki/source/ppo原始论文|PPO：近端策略优化原始论文]] — 策略梯度、概率比率裁剪与采样—更新循环；不将 PPO 等同于 RL。
+
 - [[wiki/source/gkd在策略蒸馏|GKD：在学生自生成序列上蒸馏]] — 区分序列来源与蒸馏目标，解释在策略采样及停止采样梯度。
 
 - [[wiki/source/instructgpt|InstructGPT：用人类反馈训练指令遵循模型]] — SFT、奖励模型与 PPO 的方法分工；区分监督基线和 RL 初始化。
