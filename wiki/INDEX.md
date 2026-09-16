@@ -13,7 +13,7 @@
 - [[wiki/concept/泛化与数据质量|泛化与数据质量]] — 连接过拟合、图文语料清洗与混合、任务合成以及 Arena 用户分布。
 - [[wiki/concept/动量-AdamW与权重衰减|动量、AdamW 与权重衰减]] — 动量、AdaGrad/RMSProp、Adam 偏差修正、AdamW 与报告的混合优化配置。
 - [[wiki/concept/学习率与批量调度|学习率与批量调度]] — 二次目标的稳定步长、批量噪声、常见调度及长上下文训练日程。
-- [[wiki/concept/非线性表示与归一化|非线性表示与归一化]] — MLP、激活函数以及 BN/LN/RMSNorm 的作用与区别。
+- [[wiki/concept/非线性表示与归一化|非线性表示与归一化]] — MLP、激活函数、通用近似与 BN/LN/RMSNorm 的公式和作用。
 - [[wiki/concept/Softmax与温度采样|Softmax 与温度采样]] — logits 到概率、温度示例及其与 top-p 的区别。
 - [[wiki/concept/经验风险与模型选择|经验风险与模型选择]] — 从总体风险、最小二乘到岭回归，解释验证集选择与测试集评估。
 - [[wiki/concept/偏差方差与双下降|偏差、方差与双下降]] — 解释平方误差分解、随机标签记忆及插值阈值附近的双下降。
