@@ -222,3 +222,5 @@ BPB 与 PPL 同源于负对数概率但归一化不同；例如单 token 概率 
 - [[wiki/concept/SFT-RL与OPD|SFT、RL 与 OPD]]：整理后训练流程与多教师蒸馏。
 
 - [[wiki/concept/智能体任务合成与验证|智能体任务合成与验证]]：展开自动任务生产、质检和修复循环。
+
+- [[wiki/entity/DSec|DSec]]：记录智能体沙箱平台的身份、调度和隔离设计。

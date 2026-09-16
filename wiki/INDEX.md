@@ -63,3 +63,4 @@
 - [[wiki/entity/Engram|Engram]] — DeepSeek 的条件记忆模块：ngram 哈希查表、上下文门控与确定性预取。
 - [[wiki/entity/DeepSeek-ViT|DeepSeek-ViT]] — 视觉编码器的结构、图文对比预训练、自回归微调及语言主干接入。
 - [[wiki/entity/DeepSeek-V4.1-Flash|DeepSeek-V4.1-Flash]] — 多模态 MoE 模型的身份、核心规格、组件关系和能力轮廓。
+- [[wiki/entity/DSec|DSec]] — DeepSeek Elastic Compute：支持大规模智能体训练与评测的沙箱平台。
