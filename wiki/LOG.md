@@ -217,3 +217,8 @@
 
 - 完成[[wiki/concept/智能体框架与评测协议|智能体框架与评测协议]]：把模型、工具、提示、上下文管理和预算视为联合评测对象。
 - 同步[[wiki/INDEX|索引]]及相关来源/概念回链；本条目独立提交。
+
+## [2026-09-16] 条目整理 | DeepSeek Harness
+
+- 完成[[wiki/entity/DeepSeek-Harness|DeepSeek Harness]]：DeepSeek 智能体框架的 Minimal、Standard、PTC 与 Agent Team 模式。
+- 同步[[wiki/INDEX|索引]]及相关来源/概念回链；本条目独立提交。

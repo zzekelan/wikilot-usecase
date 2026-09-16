@@ -230,3 +230,5 @@ BPB 与 PPL 同源于负对数概率但归一化不同；例如单 token 概率 
 - [[wiki/concept/推理力度与测试时计算|推理力度与测试时计算]]：展开力度条件、长度奖励、预算曲线和附录推导。
 
 - [[wiki/concept/智能体框架与评测协议|智能体框架与评测协议]]：解释跨框架成绩差异与复现配置。
+
+- [[wiki/entity/DeepSeek-Harness|DeepSeek Harness]]：集中记录框架模式与协作接口。

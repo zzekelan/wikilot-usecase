@@ -67,3 +67,4 @@
 - [[wiki/entity/DeepSeek-ViT|DeepSeek-ViT]] — 视觉编码器的结构、图文对比预训练、自回归微调及语言主干接入。
 - [[wiki/entity/DeepSeek-V4.1-Flash|DeepSeek-V4.1-Flash]] — 多模态 MoE 模型的身份、核心规格、组件关系和能力轮廓。
 - [[wiki/entity/DSec|DSec]] — DeepSeek Elastic Compute：支持大规模智能体训练与评测的沙箱平台。
+- [[wiki/entity/DeepSeek-Harness|DeepSeek Harness]] — DeepSeek 智能体框架的 Minimal、Standard、PTC 与 Agent Team 模式。
