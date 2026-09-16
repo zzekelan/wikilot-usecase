@@ -80,3 +80,4 @@
 - [[wiki/entity/DeepSeek-Harness|DeepSeek Harness]] — DeepSeek 智能体框架的 Minimal、Standard、PTC 与 Agent Team 模式。
 - [[wiki/entity/Chatbot-Arena|Chatbot Arena]] — 众包匿名成对评测平台：数据、统计排名和后续项目沿革。
 - [[wiki/entity/Arena-Bench|Arena Bench]] — 从 Arena 提示筛出的 350 题自动评测集，采用交换位置的加权成对评分。
+- [[wiki/entity/魏鸿鑫|魏鸿鑫]] — 深度学习暑期学校课件讲者，研究可靠机器学习、自动化评估和搜索智能体。
