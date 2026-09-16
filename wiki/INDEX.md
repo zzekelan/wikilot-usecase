@@ -1,85 +1,106 @@
 # Wiki 索引
 
+三份资料共 177 页：深度学习基础、DeepSeek 技术报告、Chatbot Arena 论文。当前包含 **3 个来源、37 个概念、8 个实体、3 个综合条目**。
+
+## 阅读入口
+
+- 先掌握全局：[[wiki/synthesis/从学习目标到智能体与人类偏好评测|从学习目标到智能体与人类偏好评测]]。
+- 从基础进入模型：[[wiki/synthesis/深度学习基础与DeepSeek报告的共同概念|基础课件与 DeepSeek 的共同概念]]。
+- 动手检验理解：[[wiki/synthesis/深度学习基础练习与推导|五组练习与推导]]。
+
 ## 来源笔记
 
-- [[wiki/source/chatbot-arena|Chatbot Arena：基于人类偏好的大模型评测平台]] — 数据采集、BT 排名、主动采样、专家复标、异常检测与附录公式。
-
-- [[wiki/source/深度学习基础-2026暑期学校|深度学习基础：2026 暑期学校]] — 五模块的概念、公式、例子、工程细节、教材章节与勘误。
-- [[wiki/source/deepseek-v4-1-flash|DeepSeek-V4.1-Flash 技术报告]] — 架构、预训练、后训练、服务系统、完整结果表和附录推导。
+- [[wiki/source/深度学习基础-2026暑期学校|深度学习基础：2026 暑期学校]] — 96 页课件的五模块内容、公式、例子、教材章节与勘误。
+- [[wiki/source/deepseek-v4-1-flash|DeepSeek-V4.1-Flash 技术报告]] — 51 页报告的架构、训练、系统、完整结果表与附录推导。
+- [[wiki/source/chatbot-arena|Chatbot Arena 论文]] — 30 页论文的数据采集、排名统计、实验、派生基准与附录公式。
 
 ## 概念
 
-- [[wiki/concept/交叉熵-困惑度与BPB|交叉熵、困惑度与 BPB]] — 统一解释最大似然、交叉熵梯度、PPL、BPB 以及 Arena 的偏好概率建模。
-- [[wiki/concept/泛化与数据质量|泛化与数据质量]] — 连接过拟合、图文语料清洗与混合、任务合成以及 Arena 用户分布。
-- [[wiki/concept/动量-AdamW与权重衰减|动量、AdamW 与权重衰减]] — 动量、AdaGrad/RMSProp、Adam 偏差修正、AdamW 与报告的混合优化配置。
-- [[wiki/concept/学习率与批量调度|学习率与批量调度]] — 二次目标的稳定步长、批量噪声、常见调度及长上下文训练日程。
-- [[wiki/concept/非线性表示与归一化|非线性表示与归一化]] — MLP、激活函数、通用近似与 BN/LN/RMSNorm 的公式和作用。
-- [[wiki/concept/Softmax与温度采样|Softmax 与温度采样]] — logits 到概率、温度示例及其与 top-p 的区别。
-- [[wiki/concept/经验风险与模型选择|经验风险与模型选择]] — 从总体风险、最小二乘到岭回归，解释验证集选择与测试集评估。
-- [[wiki/concept/偏差方差与双下降|偏差、方差与双下降]] — 解释平方误差分解、随机标签记忆及插值阈值附近的双下降。
-- [[wiki/concept/反向传播与参数初始化|反向传播与参数初始化]] — 链式法则、梯度消失与爆炸，以及 Xavier、He 初始化的尺度推导。
-- [[wiki/concept/正则化方法|正则化方法]] — 按作用位置比较 L1/L2、早停、Dropout 和数据增强。
-- [[wiki/concept/标签平滑与置信度校准|标签平滑与置信度校准]] — 解释软目标、过度自信，以及预测概率与实际正确率的对应关系。
-- [[wiki/concept/Muon与Sinkhorn矩阵优化|Muon 与 Sinkhorn 矩阵优化]] — 解释按矩阵结构预处理更新、按头 Muon 和嵌入表的行列平衡。
-- [[wiki/concept/KV缓存与预填充解码|KV 缓存与预填充、解码]] — 解释 prefill、decode、全局/局部 KV 与持久前缀缓存的成本。
-- [[wiki/concept/CED因果编码器解码器|CED 因果编码器–解码器]] — 通过 encoder 输出生成 decoder 全局 KV，减少长输入预填充计算。
-- [[wiki/concept/CSA2压缩稀疏注意力|CSA2 压缩稀疏注意力]] — 用 Full、Reindex、Reuse 三种模式解耦 KV 共享和稀疏索引复用。
-- [[wiki/concept/分层稀疏索引|分层稀疏索引]] — 先全局选择候选块，再在共享候选池中进行各层 Top-K 重选。
-- [[wiki/concept/SWA有界重放|SWA 有界重放]] — 以最近一个窗口的近似重算替代长期保存局部 KV，并支持 CED 预填充。
-- [[wiki/concept/FP4缓存量化|FP4 缓存量化]] — 区分主 KV、索引器与局部缓存的精度选择，以及 QAT 的作用。
-- [[wiki/concept/MoE与多模态负载均衡|MoE 与多模态负载均衡]] — 解释共享/路由专家、总参数与激活参数，以及分模态路由偏置。
-- [[wiki/concept/Single-Pass-mHC|Single-Pass mHC]] — 通过错位使用混合系数消除依赖，使多残差流处理可融合为单遍。
-- [[wiki/concept/推测解码与DSpark|推测解码与 DSpark]] — 草拟多个 token，再由主模型验证；DSpark 用置信度和负载选择验证长度。
-- [[wiki/concept/分布式训练与推理解耦|分布式训练与推理解耦]] — 把视觉、语言、共享状态与推理阶段分开调度，并通过重叠和融合减少开销。
-- [[wiki/concept/SFT-RL与OPD|SFT、RL 与 OPD]] — 比较示范学习、奖励优化与在策略蒸馏，解释后训练各阶段的分工。
-- [[wiki/concept/智能体任务合成与验证|智能体任务合成与验证]] — 将问题、环境、验证器共同构造成可训练任务，并持续审计难度与正确性。
-- [[wiki/concept/异步RL与离策略样本|异步 RL 与离策略样本]] — 解释 rollout 长尾、样本级调度、长度偏差与策略陈旧性的处理。
-- [[wiki/concept/推理力度与测试时计算|推理力度与测试时计算]] — 用条件化长度奖励学习成本–质量控制，并解释指数惩罚的局部推导。
-- [[wiki/concept/智能体框架与评测协议|智能体框架与评测协议]] — 把模型、工具、提示、上下文管理和预算视为联合评测对象。
-- [[wiki/concept/多智能体协作与关键路径|多智能体协作与关键路径]] — 解释共享任务、消息协调、派生延迟奖励和多智能体计算预算。
-- [[wiki/concept/人类偏好与成对比较|人类偏好与成对比较]] — 用匿名相对选择评价开放式回答，并区分偏好、正确性和评审一致性。
-- [[wiki/concept/Bradley-Terry模型与Elo|Bradley–Terry 模型与 Elo]] — 由成对胜负拟合潜在分数，解释逻辑胜率、平移不识别与 Elo 的关系。
-- [[wiki/concept/置信区间与近似排名|置信区间与近似排名]] — 用同时置信集表达排名不确定性，比较 bootstrap 与 sandwich 区间。
-- [[wiki/concept/主动采样与逆概率加权|主动采样与逆概率加权]] — 把票数分配给最能减少不确定性的比较，同时校正非均匀抽样。
-- [[wiki/concept/异常投票检测|异常投票检测]] — 以同模型对历史反馈构造秩检验，并区分检测率、精确率与偏好差异。
-- [[wiki/concept/主题建模与LLM评审|主题建模与 LLM 评审]] — 从提示聚类理解任务覆盖，并用明确协议评审回答质量。
-- [[wiki/concept/评测指标与可比性|评测指标与可比性]] — 区分概率建模、题目正确率、任务成功率、人类偏好及不同采样指标。
-- [[wiki/concept/评测污染与奖励投机|评测污染与奖励投机]] — 区分训练泄漏、基准选择过拟合和利用评测环境漏洞，并给出对应控制。
-- [[wiki/concept/损失曲面与SGD噪声|损失曲面与 SGD 噪声]] — 解释临界点、曲率、平坦性和小批量噪声如何影响训练。
+### 学习目标、泛化与表示
 
-## 跨来源对照
+- [[wiki/concept/经验风险与模型选择|经验风险与模型选择]] — 总体风险、最小二乘、岭回归和训练/验证/测试的分工。
+- [[wiki/concept/泛化与数据质量|泛化与数据质量]] — 过拟合、多模态数据清洗与混合、任务合成和用户分布。
+- [[wiki/concept/偏差方差与双下降|偏差、方差与双下降]] — 平方误差分解、随机标签记忆和插值阈值。
+- [[wiki/concept/交叉熵-困惑度与BPB|交叉熵、困惑度与 BPB]] — 最大似然、分类梯度、语言建模指标与偏好拟合。
+- [[wiki/concept/Softmax与温度采样|Softmax 与温度采样]] — logits 到概率、数值稳定性、温度与 top-p。
+- [[wiki/concept/非线性表示与归一化|非线性表示与归一化]] — MLP、激活、通用近似与 BN/LN/RMSNorm。
+- [[wiki/concept/反向传播与参数初始化|反向传播与参数初始化]] — 链式法则、梯度尺度及 Xavier/He 初始化。
+- [[wiki/concept/正则化方法|正则化方法]] — L1/L2、权重衰减、早停、Dropout 与数据增强。
+- [[wiki/concept/标签平滑与置信度校准|标签平滑与置信度校准]] — 软目标、过度自信及概率与经验正确率的关系。
 
-- [[wiki/synthesis/深度学习基础与DeepSeek报告的共同概念|深度学习基础与 DeepSeek 报告的共同概念]] — 从交叉熵与 BPB、优化和表示学习，进入稀疏架构、后训练与智能体评测。
-- [[wiki/synthesis/从学习目标到智能体与人类偏好评测|从学习目标到智能体与人类偏好评测]] — 贯通三份资料：概率目标、数据与环境、推理系统以及多层评测。
-- [[wiki/synthesis/深度学习基础练习与推导|深度学习基础：练习与推导]] — 按课件五组练习整理答案思路、公式核算和可复现实验设计。
+### 优化与训练调度
 
-## 原始资料目录
+- [[wiki/concept/损失曲面与SGD噪声|损失曲面与 SGD 噪声]] — 临界点、曲率、平坦性与小批量的隐式偏好。
+- [[wiki/concept/动量-AdamW与权重衰减|动量、AdamW 与权重衰减]] — 一二阶矩、偏差修正、解耦衰减与混合优化配置。
+- [[wiki/concept/学习率与批量调度|学习率与批量调度]] — 稳定步长、预热和衰减、批量噪声与长度扩展。
+- [[wiki/concept/Muon与Sinkhorn矩阵优化|Muon 与 Sinkhorn 矩阵优化]] — 利用注意力头和矩阵行列结构预处理更新。
 
-### 深度学习基础
+### 高效模型架构与推理系统
 
-- [[raw/深度学习基础/深度学习基础_2026暑期学校.pdf|深度学习基础课件 PDF]] — 魏鸿鑫主讲，2026 暑期学校，96 页；已完成全文文本导读。
+- [[wiki/concept/KV缓存与预填充解码|KV 缓存与预填充、解码]] — 区分 prefill/decode、全局/局部 KV 与持久缓存。
+- [[wiki/concept/CED因果编码器解码器|CED 因果编码器–解码器]] — 从 encoder 状态生成 decoder 全局 KV，减少 prefill。
+- [[wiki/concept/CSA2压缩稀疏注意力|CSA2 压缩稀疏注意力]] — Full、Reindex、Reuse 解耦 KV 共享与索引复用。
+- [[wiki/concept/分层稀疏索引|分层稀疏索引]] — 从全局候选块到共享候选池，再做逐层 Top-K。
+- [[wiki/concept/SWA有界重放|SWA 有界重放]] — 用固定窗口近似重算替代长期保存局部状态。
+- [[wiki/concept/FP4缓存量化|FP4 缓存量化]] — 主 KV、索引器、局部缓存的精度选择与 QAT。
+- [[wiki/concept/MoE与多模态负载均衡|MoE 与多模态负载均衡]] — 稀疏专家、激活参数与图文独立路由偏置。
+- [[wiki/concept/Single-Pass-mHC|Single-Pass mHC]] — 改变混合系数依赖以实现单遍残差流融合。
+- [[wiki/concept/推测解码与DSpark|推测解码与 DSpark]] — 多位置草拟、置信度预测和动态验证长度。
+- [[wiki/concept/分布式训练与推理解耦|分布式训练与推理解耦]] — 视觉解耦、共享状态管理、通信重叠与 EPD。
 
-### 大模型技术报告 / DeepSeek-V4.1-Flash
+### 后训练与智能体
 
-- [[raw/大模型技术报告/DeepSeek-V4.1-Flash/DeepSeek_V41_Tech_Report.pdf|DeepSeek 技术报告 PDF]] — 51 页，当前仅局部阅读。
-- [[raw/大模型技术报告/DeepSeek-V4.1-Flash/img_v3_0215e_1d574a93-1181-47ad-af6e-e46320b7f04g.png|DeepSeek 后训练段落截图]] — 涉及 SFT、RL、OPD 与数据管线；原文页码待核对。
+- [[wiki/concept/SFT-RL与OPD|SFT、RL 与 OPD]] — 示范学习、奖励优化及学生轨迹上的多教师蒸馏。
+- [[wiki/concept/智能体任务合成与验证|智能体任务合成与验证]] — 问题、环境、验证器的构建、质检与修复循环。
+- [[wiki/concept/异步RL与离策略样本|异步 RL 与离策略样本]] — 长尾调度、长度偏差、陈旧 token 与恢复机制。
+- [[wiki/concept/推理力度与测试时计算|推理力度与测试时计算]] — 条件化长度奖励、指数惩罚与质量–成本曲线。
+- [[wiki/concept/智能体框架与评测协议|智能体框架与评测协议]] — 模型、工具、提示、上下文和预算的联合评测。
+- [[wiki/concept/多智能体协作与关键路径|多智能体协作与关键路径]] — 任务分工、消息、派生延迟奖励与并行预算。
 
-### 大模型评测 / Chatbot Arena
+### 人类偏好、排名与评测
 
-- [[raw/大模型评测/Chatbot-Arena/Chatbot_Arena_ICML_2024.pdf|Chatbot Arena 论文 PDF]] — ICML 2024 正式版，研究众包成对比较与人类偏好排名。
-
-## 维护记录
-
-- [[AGENTS.md|整理与维护约定]] — 写作风格、条目分工、引用关系与逐条提交流程。
-- [[wiki/LOG|变更日志]] — 记录资料入库、阅读笔记和维护变更。
+- [[wiki/concept/人类偏好与成对比较|人类偏好与成对比较]] — 匿名相对选择、专家一致性与用户分布。
+- [[wiki/concept/Bradley-Terry模型与Elo|Bradley–Terry 模型与 Elo]] — 潜在分数、逻辑胜率、加权拟合与非参数推广。
+- [[wiki/concept/置信区间与近似排名|置信区间与近似排名]] — bootstrap、sandwich、同时推断和名次范围。
+- [[wiki/concept/主动采样与逆概率加权|主动采样与逆概率加权]] — 按不确定性分配评审预算并校正模型对抽样。
+- [[wiki/concept/异常投票检测|异常投票检测]] — 秩 p 值、有限次数检查与混淆矩阵。
+- [[wiki/concept/主题建模与LLM评审|主题建模与 LLM 评审]] — 提示聚类、问题区分力和自动裁判协议。
+- [[wiki/concept/评测指标与可比性|评测指标与可比性]] — 概率建模、Pass@k、Mean@k、任务成绩和偏好分数。
+- [[wiki/concept/评测污染与奖励投机|评测污染与奖励投机]] — 区分训练泄漏、选择过拟合与环境投机。
 
 ## 实体
 
-- [[wiki/entity/Engram|Engram]] — DeepSeek 的条件记忆模块：ngram 哈希查表、上下文门控与确定性预取。
-- [[wiki/entity/DeepSeek-ViT|DeepSeek-ViT]] — 视觉编码器的结构、图文对比预训练、自回归微调及语言主干接入。
-- [[wiki/entity/DeepSeek-V4.1-Flash|DeepSeek-V4.1-Flash]] — 多模态 MoE 模型的身份、核心规格、组件关系和能力轮廓。
-- [[wiki/entity/DSec|DSec]] — DeepSeek Elastic Compute：支持大规模智能体训练与评测的沙箱平台。
-- [[wiki/entity/DeepSeek-Harness|DeepSeek Harness]] — DeepSeek 智能体框架的 Minimal、Standard、PTC 与 Agent Team 模式。
-- [[wiki/entity/Chatbot-Arena|Chatbot Arena]] — 众包匿名成对评测平台：数据、统计排名和后续项目沿革。
-- [[wiki/entity/Arena-Bench|Arena Bench]] — 从 Arena 提示筛出的 350 题自动评测集，采用交换位置的加权成对评分。
-- [[wiki/entity/魏鸿鑫|魏鸿鑫]] — 深度学习暑期学校课件讲者，研究可靠机器学习、自动化评估和搜索智能体。
+### 模型、模块与系统
+
+- [[wiki/entity/DeepSeek-V4.1-Flash|DeepSeek-V4.1-Flash]] — 多模态 MoE 模型总览及架构、训练和评测入口。
+- [[wiki/entity/DeepSeek-ViT|DeepSeek-ViT]] — 视觉编码器、两阶段训练及语言主干接入。
+- [[wiki/entity/Engram|Engram]] — ngram 哈希查表、上下文门控与条件记忆预取。
+- [[wiki/entity/DSec|DSec]] — 大规模智能体训练与评测的弹性沙箱平台。
+- [[wiki/entity/DeepSeek-Harness|DeepSeek Harness]] — Minimal、Standard、PTC 与 Agent Team 模式。
+
+### 评测平台与基准
+
+- [[wiki/entity/Chatbot-Arena|Chatbot Arena]] — 众包匿名成对评测平台、数据和项目沿革。
+- [[wiki/entity/Arena-Bench|Arena Bench]] — 从 Arena 提示筛出的 350 题固定自动评测集。
+
+### 人物
+
+- [[wiki/entity/魏鸿鑫|魏鸿鑫]] — 暑期学校讲者，研究可靠学习、自动化评估与搜索智能体。
+
+## 跨来源对照
+
+- [[wiki/synthesis/从学习目标到智能体与人类偏好评测|从学习目标到智能体与人类偏好评测]] — 串联三份资料的目标、数据、系统和评测，并提出研究问题。
+- [[wiki/synthesis/深度学习基础与DeepSeek报告的共同概念|深度学习基础与 DeepSeek 报告的共同概念]] — 从概率目标和优化基础进入稀疏架构、后训练与推理。
+- [[wiki/synthesis/深度学习基础练习与推导|深度学习基础：练习与推导]] — 五组课堂练习的解题思路、公式核算和实验设计。
+
+## 原始资料
+
+- [[raw/深度学习基础/深度学习基础_2026暑期学校.pdf|深度学习基础课件 PDF]] — 96 页，已完成全文整理。
+- [[raw/大模型技术报告/DeepSeek-V4.1-Flash/DeepSeek_V41_Tech_Report.pdf|DeepSeek 技术报告 PDF]] — 51 页，已完成正文与附录整理。
+- [[raw/大模型技术报告/DeepSeek-V4.1-Flash/img_v3_0215e_1d574a93-1181-47ad-af6e-e46320b7f04g.png|DeepSeek 后训练截图]] — 对应报告第 6 页，概述 SFT、RL、OPD 和数据管线。
+- [[raw/大模型评测/Chatbot-Arena/Chatbot_Arena_ICML_2024.pdf|Chatbot Arena 论文 PDF]] — 30 页，已完成正文、附录与示例整理。
+
+## 维护
+
+- [[AGENTS.md|整理与维护约定]] — 写作风格、条目分工、引用关系与逐条提交流程。
+- [[wiki/LOG|变更日志]] — 资料整理、条目更新和维护检查记录。
