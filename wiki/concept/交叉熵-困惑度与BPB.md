@@ -31,3 +31,5 @@
 ## 关联条目（持续维护）
 
 - [[wiki/concept/Bradley-Terry模型与Elo|Bradley–Terry 模型与 Elo]]：偏好建模同样使用二元交叉熵。
+
+- [[wiki/concept/评测指标与可比性|评测指标与可比性]]：概率预测指标与任务成功率各衡量不同对象。

@@ -234,3 +234,5 @@ BPB 与 PPL 同源于负对数概率但归一化不同；例如单 token 概率 
 - [[wiki/entity/DeepSeek-Harness|DeepSeek Harness]]：集中记录框架模式与协作接口。
 
 - [[wiki/concept/多智能体协作与关键路径|多智能体协作与关键路径]]：解释多智能体协作奖励与初步实验。
+
+- [[wiki/concept/评测指标与可比性|评测指标与可比性]]：统一解释结果表中的不同指标与采样口径。

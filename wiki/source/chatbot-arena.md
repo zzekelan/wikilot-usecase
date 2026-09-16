@@ -153,3 +153,5 @@ BERTopic 管线：text-embedding-3-small 得 1536 维→UMAP 到 5 维→HDBSCAN
 - [[wiki/entity/Chatbot-Arena|Chatbot Arena]]：建立平台实体，连接采集、排名与沿革。
 
 - [[wiki/entity/Arena-Bench|Arena Bench]]：区分实时平台与固定自动评测集。
+
+- [[wiki/concept/评测指标与可比性|评测指标与可比性]]：把偏好分数与任务、概率指标放在同一评测地图中。
