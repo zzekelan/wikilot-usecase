@@ -1,0 +1,121 @@
+{
+  "info": {
+    "author": null,
+    "author_email": null,
+    "bugtrack_url": null,
+    "classifiers": [],
+    "description": "![](docs/images/searcherkit_title.png)\n\nSearcherKit is a modular system for building AI agents that rely heavily on search. It handles everything from agent rollouts, LLM backends, tool calls, and benchmark evaluation, to training pipelines — all in one project.\n\n\n\n![](docs/images/searcherkit.png)\n\n\n## What it does\n\n- **Build and run search agents** – Define agent behavior once, then use it for prototyping, evaluation, interactive demos, and large‑scale post training.\n- **Connect to any data source** – Plug in web APIs, Elasticsearch, internal knowledge bases, or local files through a unified interface. Combine sources freely without touching agent code.\n- **Scale without pain** – Async execution, flexible concurrency, checkpoint recovery, and detailed traces make batch jobs fast and debuggable. Swap models and backends easily.\n- **Training‑ready** – The same agent and tool configuration can be used for evaluation, offline analysis, and integration with training pipelines, without needing to refactor code.\n\n---\n\n## Why SearcherKit?\n\n- 🧩 **One codebase, many uses** – No more copying logic between research and production. What you build for an experiment works directly for evaluation and deployment.\n- 🔌 **Plug‑and‑play sources** – Add or remove search backends in minutes. The agent doesn’t care where the data comes from.\n- ⚡ **Fast and reliable** – Native async, smart concurrency, and automatic checkpointing let you run weeks‑long experiments without babysitting.\n- 🏆 **Proven in RL** – We’ve used it to train competitive 8B models on real search tasks. The same pipeline is open and ready for your own training.\n\n---\n\n### 🚀 Quick Start\n\nJump right in with the [Quick Start guide](https://searcherkit.readthedocs.io/en/latest/docs/guide/index.html) — you’ll have a search agent running in minutes.\n\n### 📖 Documentation\n\nBrowse the docs by topic:\n\n- **Getting started** – [Quick Start](https://searcherkit.readthedocs.io/en/latest/docs/guide/index.html) · [Searching files](https://searcherkit.readthedocs.io/en/latest/docs/guide/searching/search-files.html) · [Searching webpages](https://searcherkit.readthedocs.io/en/latest/docs/guide/searching/search-web.html)\n- **Training** – [Overview of SFT & RL workflows](https://searcherkit.readthedocs.io/en/latest/docs/guide/training/training-overview.html)\n- **Customization** – [Project architecture and extending components](https://searcherkit.readthedocs.io/en/latest/docs/guide/customizing/project-architecture.html)\n- **Interfaces** – [CLI reference](https://searcherkit.readthedocs.io/en/latest/docs/guide/interface/use-the-cli-interface.html) · [Interactive TUI](https://searcherkit.readthedocs.io/en/latest/docs/guide/interface/use-the-interactive-tui.html)\n\n\n---\n\n### 🤝 Contributing\n\nSearcherKit is under active development. We welcome issues and pull requests for reproduction reports, new model parsers, source adapters, benchmark recipes, training integrations, bug fixes, documentation, and more.\n\nIf SearcherKit helps your research or simplifies your agent stack, please give us a ⭐ on GitHub – it helps others discover the project.\n\n### 👤 The Team\n\nSearcherKit is built and maintained by the group of Assistant Professor [Wei Hongxin](https://hongxin001.github.io/) and Professor [Jing Bingyi](https://sai.cuhk.edu.cn/en/teacher/162) in SUSTech and CUHK-SZ.  \nCore maintainers: [Li Hanyang](https://justinliii.github.io/), [Zhang Haotian](https://github.com/Claritin0930), [Yang Hanjie](https://github.com/Foo1szz), [Wang Shuoyuan](https://github.com/Claritin0930), [Chen Yiyang](https://github.com/0xPabloxx), [Lan Zijie](https://github.com/zzekelan), and [Yu Zhengye](https://github.com/NZhengye).\n\n### 📜 License\n\nSearcherKit is licensed under the [MIT License](LICENSE).\n",
+    "description_content_type": "text/markdown",
+    "docs_url": null,
+    "download_url": null,
+    "downloads": {
+      "last_day": -1,
+      "last_month": -1,
+      "last_week": -1
+    },
+    "dynamic": null,
+    "home_page": null,
+    "keywords": null,
+    "license": null,
+    "license_expression": "MIT",
+    "license_files": [
+      "LICENSE"
+    ],
+    "maintainer": null,
+    "maintainer_email": null,
+    "name": "searcherkit",
+    "package_url": "https://pypi.org/project/searcherkit/",
+    "platform": null,
+    "project_url": "https://pypi.org/project/searcherkit/",
+    "project_urls": null,
+    "provides_extra": [
+      "indexing"
+    ],
+    "release_url": "https://pypi.org/project/searcherkit/0.1.1/",
+    "requires_dist": [
+      "aiohttp>=3.9.0",
+      "anthropic>=0.84.0",
+      "backoff>=2.2.1",
+      "datasets>=4.8.4",
+      "elasticsearch<9.0.0",
+      "fastmcp>=3.0.0",
+      "hydra-core>=1.3.2",
+      "json-repair>=0.54.2",
+      "jsonschema>=4.26.0",
+      "openai>=2.24.0",
+      "prompt-toolkit>=3.0.52",
+      "pydantic>=2.0.0",
+      "tqdm>=4.67.1",
+      "uvloop>=0.22.1; sys_platform != \"win32\"",
+      "accelerate>=1.13.0; extra == \"indexing\"",
+      "elasticsearch<9.0.0; extra == \"indexing\"",
+      "mwparserfromhell>=0.6; extra == \"indexing\"",
+      "sentence-transformers>=2.0.0; extra == \"indexing\"",
+      "torch>=2.0.0; extra == \"indexing\""
+    ],
+    "requires_python": ">=3.12",
+    "summary": "Pluggable search agent runtime for multiple sources and LLM providers.",
+    "version": "0.1.1",
+    "yanked": false,
+    "yanked_reason": null
+  },
+  "last_serial": 39177098,
+  "ownership": {
+    "organization": null,
+    "roles": [
+      {
+        "role": "Owner",
+        "user": "weihx"
+      }
+    ]
+  },
+  "urls": [
+    {
+      "comment_text": null,
+      "core-metadata": {
+        "sha256": "033380eaa168a5962b7b9a47e5eac4aea355860b80f1b0cc3b34232c417a5725"
+      },
+      "digests": {
+        "blake2b_256": "1e1fa09f7385ad7af17855a53c4b4451d60025390a2eb39782f0761239765c93",
+        "md5": "3e0aa1b635e60fbc6b168ed2215cfde9",
+        "sha256": "7da6fddfe59d75071b41ceccaacb7a8893b84451f53bc04956d16925002283b9"
+      },
+      "downloads": -1,
+      "filename": "searcherkit-0.1.1-py3-none-any.whl",
+      "has_sig": false,
+      "md5_digest": "3e0aa1b635e60fbc6b168ed2215cfde9",
+      "packagetype": "bdist_wheel",
+      "python_version": "py3",
+      "requires_python": ">=3.12",
+      "size": 218064,
+      "upload_time": "2026-07-20T09:27:14",
+      "upload_time_iso_8601": "2026-07-20T09:27:14.726048Z",
+      "url": "https://files.pythonhosted.org/packages/1e/1f/a09f7385ad7af17855a53c4b4451d60025390a2eb39782f0761239765c93/searcherkit-0.1.1-py3-none-any.whl",
+      "yanked": false,
+      "yanked_reason": null
+    },
+    {
+      "comment_text": null,
+      "core-metadata": false,
+      "digests": {
+        "blake2b_256": "198330f48afdb2c2a9189bd15495cd0a859101750080ac0f538fef25936d8081",
+        "md5": "0fd387f54d50951bc3da0839a341cbef",
+        "sha256": "9a7eda8c15f335ebdb9ea725cba496ae14180e449dda72611490ddf70ce44c03"
+      },
+      "downloads": -1,
+      "filename": "searcherkit-0.1.1.tar.gz",
+      "has_sig": false,
+      "md5_digest": "0fd387f54d50951bc3da0839a341cbef",
+      "packagetype": "sdist",
+      "python_version": "source",
+      "requires_python": ">=3.12",
+      "size": 3041954,
+      "upload_time": "2026-07-20T09:27:16",
+      "upload_time_iso_8601": "2026-07-20T09:27:16.127999Z",
+      "url": "https://files.pythonhosted.org/packages/19/83/30f48afdb2c2a9189bd15495cd0a859101750080ac0f538fef25936d8081/searcherkit-0.1.1.tar.gz",
+      "yanked": false,
+      "yanked_reason": null
+    }
+  ],
+  "vulnerabilities": []
+}
