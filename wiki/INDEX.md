@@ -11,7 +11,7 @@
 
 - [[wiki/concept/交叉熵-困惑度与BPB|交叉熵、困惑度与 BPB]] — 统一解释最大似然、交叉熵梯度、PPL、BPB 以及 Arena 的偏好概率建模。
 - [[wiki/concept/泛化与数据质量|泛化与数据质量]] — 过拟合、数据覆盖与去重、训练/验证/测试的分工。
-- [[wiki/concept/动量-AdamW与权重衰减|动量、AdamW 与权重衰减]] — 参数更新机制、L2 与衰减的区别，以及报告的混合优化方案。
+- [[wiki/concept/动量-AdamW与权重衰减|动量、AdamW 与权重衰减]] — 动量、AdaGrad/RMSProp、Adam 偏差修正、AdamW 与报告的混合优化配置。
 - [[wiki/concept/学习率与批量调度|学习率与批量调度]] — 步长、预热、余弦衰减及报告的实际训练日程。
 - [[wiki/concept/非线性表示与归一化|非线性表示与归一化]] — MLP、激活函数以及 BN/LN/RMSNorm 的作用与区别。
 - [[wiki/concept/Softmax与温度采样|Softmax 与温度采样]] — logits 到概率、温度示例及其与 top-p 的区别。
