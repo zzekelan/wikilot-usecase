@@ -196,3 +196,5 @@ BPB 与 PPL 同源于负对数概率但归一化不同；例如单 token 概率 
 - [[wiki/concept/KV缓存与预填充解码|KV 缓存与预填充、解码]]：解释报告降低部署成本时使用的缓存与推理阶段口径。
 
 - [[wiki/concept/CED因果编码器解码器|CED 因果编码器–解码器]]：展开降低 prefill 计算的因果编码器–解码器。
+
+- [[wiki/concept/CSA2压缩稀疏注意力|CSA2 压缩稀疏注意力]]：解释架构图中的 Full、Reindex 与 Reuse。

@@ -132,3 +132,8 @@
 
 - 完成[[wiki/concept/CED因果编码器解码器|CED 因果编码器–解码器]]：通过 encoder 输出生成 decoder 全局 KV，减少长输入预填充计算。
 - 同步[[wiki/INDEX|索引]]及相关来源/概念回链；本条目独立提交。
+
+## [2026-09-16] 条目整理 | CSA2 压缩稀疏注意力
+
+- 完成[[wiki/concept/CSA2压缩稀疏注意力|CSA2 压缩稀疏注意力]]：用 Full、Reindex、Reuse 三种模式解耦 KV 共享和稀疏索引复用。
+- 同步[[wiki/INDEX|索引]]及相关来源/概念回链；本条目独立提交。
