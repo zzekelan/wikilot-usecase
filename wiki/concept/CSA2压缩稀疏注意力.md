@@ -21,3 +21,7 @@ CSA2（Compressed Sparse Attention 2）同时利用序列压缩、跨层 KV 共�
 前两层只有 SWA。encoder 其余 18 层按三组 Full+5 Reuse 排列，m=2；decoder 20 层为五组四层，第一组 Full+3 Reuse，其余 Reindex+3 Reuse，m=1。每个 query 选 Top-512，SWA 窗口 128（第 22 页）。
 
 结合[[wiki/concept/CED因果编码器解码器|CED]]时，decoder 的 Full 层从最终 encoder 状态投影全局 KV。共享减少重复保存，层间重选保留部分表达灵活性；稀疏选择的主要风险是漏掉任务所需位置（第 11、37 页）。
+
+## 关联条目（持续维护）
+
+- [[wiki/concept/分层稀疏索引|分层稀疏索引]]：减少 Reindex 层的全上下文扫描。

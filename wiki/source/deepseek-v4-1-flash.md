@@ -198,3 +198,5 @@ BPB 与 PPL 同源于负对数概率但归一化不同；例如单 token 概率 
 - [[wiki/concept/CED因果编码器解码器|CED 因果编码器–解码器]]：展开降低 prefill 计算的因果编码器–解码器。
 
 - [[wiki/concept/CSA2压缩稀疏注意力|CSA2 压缩稀疏注意力]]：解释架构图中的 Full、Reindex 与 Reuse。
+
+- [[wiki/concept/分层稀疏索引|分层稀疏索引]]：展开分层候选池的选择与复杂度。
