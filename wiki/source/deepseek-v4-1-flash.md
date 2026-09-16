@@ -218,3 +218,5 @@ BPB 与 PPL 同源于负对数概率但归一化不同；例如单 token 概率 
 - [[wiki/entity/DeepSeek-V4.1-Flash|DeepSeek-V4.1-Flash]]：作为模型实体总览，连接架构组件与完整结果。
 
 - [[wiki/concept/分布式训练与推理解耦|分布式训练与推理解耦]]：串联多模态训练、共享状态、Engram 分片和 EPD 部署。
+
+- [[wiki/concept/SFT-RL与OPD|SFT、RL 与 OPD]]：整理后训练流程与多教师蒸馏。

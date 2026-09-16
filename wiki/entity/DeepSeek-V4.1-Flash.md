@@ -32,3 +32,7 @@ Base 用于概率预测和 few-shot 能力评估；后训练模型通过 SFT、R
 报告的重点是常用任务能力与成本的组合；较难科学任务、多模态边界、长上下文稀疏检索与近似状态恢复仍是进一步优化方向（第 37 页）。
 
 相关资源：[模型仓库](https://huggingface.co/deepseek-ai/DeepSeek-V4.1-Flash)。
+
+## 关联条目（持续维护）
+
+- [[wiki/concept/SFT-RL与OPD|SFT、RL 与 OPD]]：说明基础模型到推理/智能体模型的训练阶段。

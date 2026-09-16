@@ -31,6 +31,7 @@
 - [[wiki/concept/Single-Pass-mHC|Single-Pass mHC]] — 通过错位使用混合系数消除依赖，使多残差流处理可融合为单遍。
 - [[wiki/concept/推测解码与DSpark|推测解码与 DSpark]] — 草拟多个 token，再由主模型验证；DSpark 用置信度和负载选择验证长度。
 - [[wiki/concept/分布式训练与推理解耦|分布式训练与推理解耦]] — 把视觉、语言、共享状态与推理阶段分开调度，并通过重叠和融合减少开销。
+- [[wiki/concept/SFT-RL与OPD|SFT、RL 与 OPD]] — 比较示范学习、奖励优化与在策略蒸馏，解释后训练各阶段的分工。
 
 ## 跨来源对照
 
