@@ -172,3 +172,8 @@
 
 - 完成[[wiki/concept/推测解码与DSpark|推测解码与 DSpark]]：草拟多个 token，再由主模型验证；DSpark 用置信度和负载选择验证长度。
 - 同步[[wiki/INDEX|索引]]及相关来源/概念回链；本条目独立提交。
+
+## [2026-09-16] 条目整理 | DeepSeek-ViT
+
+- 完成[[wiki/entity/DeepSeek-ViT|DeepSeek-ViT]]：视觉编码器的结构、图文对比预训练、自回归微调及语言主干接入。
+- 同步[[wiki/INDEX|索引]]及相关来源/概念回链；本条目独立提交。

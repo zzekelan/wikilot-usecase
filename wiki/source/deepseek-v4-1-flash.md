@@ -212,3 +212,5 @@ BPB 与 PPL 同源于负对数概率但归一化不同；例如单 token 概率 
 - [[wiki/entity/Engram|Engram]]：记录条件记忆模块的配置与训练/部署关系。
 
 - [[wiki/concept/推测解码与DSpark|推测解码与 DSpark]]：解释 DSpark 的草拟、验证与训练阶段。
+
+- [[wiki/entity/DeepSeek-ViT|DeepSeek-ViT]]：集中说明视觉编码器及其两阶段训练。

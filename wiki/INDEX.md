@@ -58,3 +58,4 @@
 ## 实体
 
 - [[wiki/entity/Engram|Engram]] — DeepSeek 的条件记忆模块：ngram 哈希查表、上下文门控与确定性预取。
+- [[wiki/entity/DeepSeek-ViT|DeepSeek-ViT]] — 视觉编码器的结构、图文对比预训练、自回归微调及语言主干接入。
