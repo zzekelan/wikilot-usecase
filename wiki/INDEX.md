@@ -22,6 +22,7 @@
 - [[wiki/concept/标签平滑与置信度校准|标签平滑与置信度校准]] — 解释软目标、过度自信，以及预测概率与实际正确率的对应关系。
 - [[wiki/concept/Muon与Sinkhorn矩阵优化|Muon 与 Sinkhorn 矩阵优化]] — 解释按矩阵结构预处理更新、按头 Muon 和嵌入表的行列平衡。
 - [[wiki/concept/KV缓存与预填充解码|KV 缓存与预填充、解码]] — 解释 prefill、decode、全局/局部 KV 与持久前缀缓存的成本。
+- [[wiki/concept/CED因果编码器解码器|CED 因果编码器–解码器]] — 通过 encoder 输出生成 decoder 全局 KV，减少长输入预填充计算。
 
 ## 跨来源对照
 
