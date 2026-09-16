@@ -206,3 +206,5 @@ BPB 与 PPL 同源于负对数概率但归一化不同；例如单 token 概率 
 - [[wiki/concept/FP4缓存量化|FP4 缓存量化]]：说明主 KV 低精度布局与 QAT。
 
 - [[wiki/concept/MoE与多模态负载均衡|MoE 与多模态负载均衡]]：展开 DeepSeekMoE 的专家配置与图文分模态路由。
+
+- [[wiki/concept/Single-Pass-mHC|Single-Pass mHC]]：解释 Mega-mHC 内核融合所依赖的结构改变。
