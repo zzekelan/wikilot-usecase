@@ -2,7 +2,7 @@
 
 ## 来源笔记
 
-- [[wiki/source/chatbot-arena|Chatbot Arena 论文]] — ICML 2024 人类偏好评测平台论文；已归档正式版 PDF，附摘要要点，待全文精读。
+- [[wiki/source/chatbot-arena|Chatbot Arena：基于人类偏好的大模型评测平台]] — 30 页全文：数据、BT 排名、主动采样、专家复标、全部附录及统计/公式疑点。
 
 - [[wiki/source/深度学习基础-2026暑期学校|深度学习基础：2026 暑期学校]] — 96 页课件的五模块导读：泛化、交叉熵、深度网络、优化、正则化；附页码、学习建议和勘误。
 - [[wiki/source/deepseek-v4-1-flash|DeepSeek-V4.1-Flash 技术报告]] — 51 页全文整理：架构、训练、系统、全部结果表、附录、图 6 数值及证据限制。
